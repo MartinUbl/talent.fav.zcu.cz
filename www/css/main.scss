@@ -1,0 +1,119 @@
+$accent-color: #e0b100;
+$text-color: #173868;
+$bg-grey: #f2f5fa;
+$hover-color: #757575;
+
+/* roboto-condensed-regular - latin-ext_latin */
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(''),
+    url('roboto-condensed-v24-latin-ext_latin-regular.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* roboto-condensed-700 - latin-ext_latin */
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local(''),
+    url('roboto-condensed-v24-latin-ext_latin-700.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* open-sans-regular - latin-ext_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(''),
+    url('open-sans-v27-latin-ext_latin-regular.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* open-sans-700 - latin-ext_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local(''),
+    url('open-sans-v27-latin-ext_latin-700.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+body {
+    font-family: 'Open Sans';
+    color: $text-color;
+}
+
+.container-fluid {
+    &.grey {
+        padding-top: 1em;
+        background-color: $bg-grey;
+    }
+    &.yellow {
+        background-color: $accent-color;
+        color: white;
+    }
+}
+
+.headerrow {
+    border-bottom: 3px solid $accent-color;
+}
+
+.topimg {
+    height: 1em;
+}
+
+h1 {
+    display: inline-block;
+    font-family: 'Roboto Condensed';
+    color: $accent-color;
+    font-size: 2.8em;
+}
+
+div.menu {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.95em;
+    
+    div {
+        margin-bottom: 0.3em;
+        padding: 0;
+        margin: 0;
+        &.left {
+            float: left;
+        }
+        &.right {
+            float: right;
+        }
+    }
+    
+    a {
+        text-transform: uppercase;
+        line-height: 2em;
+        font-weight: 600;
+        text-align: center;
+        div {
+            padding: 0.4em 2em 0.4em 2em;
+        }
+    }
+    
+    a {
+        font-family: 'Roboto Condensed';
+        color: white;
+        text-decoration: none;
+        
+        margin-left: 0;
+        margin: 0;
+        
+        &:hover {
+            div {
+                background-color: white;
+            }
+            color: $hover-color;
+        }
+    }
+}

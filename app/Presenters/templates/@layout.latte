@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Talent FAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="{$baseUrl}/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+    
+    <div class="container-fluid">
+        <div class="container">
+
+            <div class="row">
+                 <div class="col-12 p-3">
+                     <h1><img src="{$baseUrl}/img/logo.svg" alt="Logo FAV" class="topimg" /> {_main.title}</h1>
+                 </div>
+            </div>
+             
+        </div>
+             
+    </div>
+    <div class="container-fluid yellow p-0">
+        <div class="container p-0">
+            <div class="row p-0">
+                <div class="col-12 p-0">
+                    <div class="menu">
+                        <a n:href="Home:"><div class="left">{_main.menu.homepage}</div></a>
+                        <a n:href="GrabTheLab:"><div class="left">{_main.menu.grabthelab}</div></a>
+                        <a n:href="Scholarship:"><div class="left">{_main.menu.stipendium}</div></a>
+                        
+                        <a n:href="Sign:in"><div class="right">{_main.menu.signin}</div></a>
+                        <a n:href="Sign:up"><div class="right">{_main.menu.signup}</div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid grey">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    {include content}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid yellow">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    &copy ZČU 1991 - {date('Y')}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {block scripts}
+    <script src="https://unpkg.com/nette-forms@3/src/assets/netteForms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    {/block}
+</body>
+</html>

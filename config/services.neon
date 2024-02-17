@@ -1,0 +1,3 @@
+services:
+    - App\Router\RouterFactory::createRouter
+    - App\Configurator(googleClientId: %googleauth.client_id%, googleClientSecret: %googleauth.client_secret%)
