@@ -71,7 +71,14 @@ h1 {
     display: inline-block;
     font-family: 'Roboto Condensed';
     color: $accent-color;
+    text-transform: uppercase;
     font-size: 2.8em;
+}
+
+h2, h3, h4, h5 {
+    font-family: 'Roboto Condensed';
+    color: $text-color;
+    text-transform: uppercase;
 }
 
 div.menu {
@@ -91,7 +98,7 @@ div.menu {
         }
     }
     
-    a {
+    a, span {
         text-transform: uppercase;
         line-height: 2em;
         font-weight: 600;
@@ -115,5 +122,78 @@ div.menu {
             }
             color: $hover-color;
         }
+    }
+
+    span {
+        font-family: 'Roboto Condensed';
+        color: white;
+        text-decoration: none;
+        
+        margin-left: 0;
+        margin: 0;
+    }
+}
+
+.content-block {
+    width: 100%;
+    height: 100%;
+    margin: 1em;
+    padding: 1em;
+    background-color: white;
+}
+
+.btn, .form-label {
+    font-family: 'Roboto Condensed';
+    text-transform: uppercase;
+}
+
+.form-parent {
+    position: relative;
+}
+
+.form-error-message {
+    display: block;
+    position: absolute;
+    overflow: visible;
+    top: 0.2em;
+    right: 0;
+
+    color: red;
+    font-size: 0.8em;
+}
+
+.flash-container {
+    position: fixed;
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+}
+
+.flash {
+    display: block;
+    margin-bottom: 0.5em;
+    border-radius: 4px;
+    padding: 0.5em 4em 0.5em 2em;
+
+    position: relative;
+
+    &.success {
+        border: 2px solid green;
+        background-color: #BBFFBB;
+        color: #004400;
+    }
+
+    &.error {
+        border: 2px solid red;
+        background-color: #FFBBBB;
+        color: #440000;
+    }
+
+    .btn-close {
+        position: absolute;
+        right: 1em;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }

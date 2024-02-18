@@ -1,11 +1,49 @@
 {block scripts}
+{include #parent}
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 {/block}
 
 {block content}
-    
-    <a href="{$googleAuthLink}">Google Login</a>
 
-<script>
-    
-</script>
+<div class="row">    
+    <div class="col-12 content-block">
+        <h2>{_main.signup.title}</h2>
+
+        {form signUpForm}
+        {if !empty($form->getErrors())}
+            <div class="alert alert-danger">
+                {foreach $form->getErrors() as $err}
+                    <p><i class="fa-solid fa-circle-exclamation"></i>&nbsp; {$err}</p>
+                {/foreach}
+            </div>
+        {/if}
+            <div class="mb-3 form-parent">
+                {label fullname class=>'form-label' /}
+                {input fullname class=>'form-control'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label email class=>'form-label' /}
+                {input email class=>'form-control'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label password class=>'form-label' /}
+                {input password class=>'form-control'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label password_again class=>'form-label' /}
+                {input password_again class=>'form-control'}
+            </div>
+            <div class="mb-3 d-grid">
+                {input submit class=>'btn btn-warning'}
+            </div>
+        {/form}
+
+        <div class="mb-3 text-center">
+            {_main.signup.or_text}
+        </div>
+
+        <div class="mb-3 d-grid">
+            <a href="{$googleAuthLink}" class="btn btn-outline-warning"><i class="fa-brands fa-google"></i>&nbsp; {_main.signup.google}</a>
+        </div>
+    </div>
+</div>

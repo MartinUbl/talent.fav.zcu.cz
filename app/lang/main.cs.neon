@@ -6,3 +6,47 @@ menu:
     stipendium: "Stipendium děkana"
     signin: "Přihlásit se"
     signup: "Registrovat se"
+    userloggedas: "Přihlášen jako"
+
+signup:
+    title: "Registrace"
+    fullname: "Vaše celé jméno"
+    fullname_placeholder: "např. Jan Novák"
+    fullname_required: "Zadejte Vaše jméno!"
+    email: "E-mail"
+    email_placeholder: "např. jan.novak@skola.cz"
+    email_required: "Zadejte Váš e-mail!"
+    email_invalid: "Neplatný e-mail!"
+    password: "Heslo"
+    password_placeholder: "např. **********"
+    password_required: "Zvolte si heslo!"
+    password_min_length: "Minimální délka hesla je 8 znaků!"
+    password_again: "Heslo znovu (pro ověření)"
+    password_again_placeholder: "např. **********"
+    passwords_must_match: "Zadaná hesla se neshodují!"
+    submit: "Registrovat se"
+
+    or_text: "nebo můžete použít alternativní způsob registrace"
+    google: "Registrace pomocí Google"
+
+    success: "Byl/a jste úspěšně registrován/a!"
+    user_already_exists: "Uživatel s touto e-mailovou adresou již existuje"
+    unknown_error: "Nastala neznámá chyba. Zkuste to prosím později."
+
+signin:
+    title: "Přihlásit se"
+    email: "E-mail"
+    email_placeholder: "např. jan.novak@skola.cz"
+    email_required: "Zadejte Váš e-mail!"
+    email_invalid: "Neplatný e-mail!"
+    password: "Heslo"
+    password_placeholder: "např. **********"
+    password_required: "Zadejte přihlašovací heslo!"
+    submit: "Přihlásit se"
+
+    or_text: "nebo můžete použít alternativní způsob přihlášení"
+    google: "Přihlásit se pomocí Google"
+
+    invalid_credentials: "Neplatné přihlašovací údaje!"
+    unknown_error: "Nastala neznámá chyba. Opakujte prosím pokus později."
+    success: "Byl/a jste úspěšně přihlášen/a!"
