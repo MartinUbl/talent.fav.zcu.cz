@@ -26,9 +26,9 @@ translation:
     locales:
         whitelist: [en, cs]
         default: cs
-        fallback: [cs]
     dirs:
         - %appDir%/lang
     returnOriginalMessage: true
     localeResolvers:
+        - Contributte\Translation\LocalesResolvers\Session
         - Contributte\Translation\LocalesResolvers\Header

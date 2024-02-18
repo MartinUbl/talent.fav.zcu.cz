@@ -67,6 +67,26 @@ body {
     height: 1em;
 }
 
+.footer {
+    padding: 1em 0;
+    font-size: 0.8em;
+}
+
+.hdr {
+    position: relative;
+}
+
+.lang-selector {
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    img {
+        width: 1em;
+        height: 1em;
+    }
+}
+
 h1 {
     display: inline-block;
     font-family: 'Roboto Condensed';
@@ -195,5 +215,84 @@ div.menu {
         right: 1em;
         top: 50%;
         transform: translateY(-50%);
+    }
+}
+
+.banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+
+    position: relative;
+
+    &.grabthelab {
+        background: url('../img/grabthelab.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    &.scholarship {
+        background: url('../img/scholarship.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    &.talentambassador {
+        background: url('../img/talentambassador.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .wrapper {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 70%;
+        background-color: $accent-color;
+        color: white;
+        padding: 1em;
+
+        transition: top ease-in 0.1s;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        background-color: $accent-color;
+        opacity: 0.5;
+        transition: opacity linear 0.1s;
+    }
+
+    &:hover {
+        .wrapper {
+            top: 50%;
+        }
+
+        .overlay {
+            opacity: 0;
+        }
+    }
+
+    .title {
+        font-size: 1.5em;
+        text-align: center;
+        font-family: 'Roboto Condensed';
+        text-transform: uppercase;
+    }
+
+    .subtitle {
+        font-size: 0.8em;
+        text-align: center;
+        font-family: 'Roboto Condensed';
+        text-transform: uppercase;
     }
 }

@@ -6,12 +6,22 @@
 
     <title>Talent FAV</title>
     
+    <link rel="apple-touch-icon" sizes="180x180" href="{$baseUrl}/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{$baseUrl}/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{$baseUrl}/favicon-16x16.png">
     <script src="https://kit.fontawesome.com/8321f6fdd4.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.0/dist/cookieconsent.umd.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.0/dist/cookieconsent.css">
     <link href="{$baseUrl}/css/main.css" rel="stylesheet">
 </head>
 
 <body>
+    <script>
+        let GLOB_LANG = {$lang};
+    </script>
+    <script type="module" src="{$baseUrl}/js/cookieconsent-config.js"></script>
+
     <div class="flash-container">
         <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message} <button type="button" class="btn-close" aria-label="Close"></button></div>
     </div>
@@ -19,8 +29,12 @@
     <div class="container-fluid">
         <div class="container">
             <div class="row">
-                 <div class="col-12 p-3">
+                 <div class="col-12 p-3 hdr">
                      <h1><img src="{$baseUrl}/img/logo.svg" alt="Logo FAV" class="topimg" /> {_main.title}</h1>
+                     <div class="lang-selector">
+                        <a n:href="changeLocale! lang=>cs"><img src="{$baseUrl}/img/cs.svg" title="Čeština" alt="Čeština" /></a>
+                        <a n:href="changeLocale! lang=>en"><img src="{$baseUrl}/img/en.svg" title="English" alt="English" /></a>
+                     </div>
                  </div>
             </div>
         </div>
@@ -33,6 +47,7 @@
                         <a n:href="Home:"><div class="left">{_main.menu.homepage}</div></a>
                         <a n:href="GrabTheLab:"><div class="left">{_main.menu.grabthelab}</div></a>
                         <a n:href="Scholarship:"><div class="left">{_main.menu.stipendium}</div></a>
+                        <a n:href="TalentAmbassador:"><div class="left">{_main.menu.talentambassador}</div></a>
                         
                         {if $user->isLoggedIn()}
                         <a n:href="logout!" title="{_main.menu.logout}"><div class="right"><i class="fa-solid fa-right-from-bracket"></i></div></a>
@@ -58,7 +73,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid yellow">
+    <div class="container-fluid yellow footer">
         <div class="container">
             <div class="row">
                 <div class="col-12">

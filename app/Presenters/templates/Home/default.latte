@@ -1,3 +1,43 @@
 {block content}
 
+<div class="row">
+    <div class="col-12">
 
+        <h2>{_main.home.title}</h2>
+
+        <p>{_main.home.par1|noescape}</p>
+
+        <p>{_main.home.par2|noescape}</p>
+
+    </div>
+</div>
+
+<div class="row g-0">
+    <div class="col-4">
+        <a class="banner grabthelab" n:href="GrabTheLab:">
+            <div class="overlay"></div>
+            <div class="wrapper">
+                <div class="title">{_main.home.grabthelab_title}</div>
+                <div class="subtitle">{_main.home.grabthelab_subtitle}</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-4">
+        <a class="banner scholarship" n:href="Scholarship:">
+            <div class="overlay"></div>
+            <div class="wrapper">
+                <div class="title">{_main.home.scholarship_title}</div>
+                <div class="subtitle">{_main.home.scholarship_subtitle}</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-4">
+        <a class="banner talentambassador" n:href="TalentAmbassador:">
+            <div class="overlay"></div>
+            <div class="wrapper">
+                <div class="title">{_main.home.talentambassador_title}</div>
+                <div class="subtitle">{_main.home.talentambassador_subtitle}</div>
+            </div>
+        </a>
+    </div>
+</div>

@@ -13,7 +13,7 @@
         {if !empty($form->getErrors())}
             <div class="alert alert-danger">
                 {foreach $form->getErrors() as $err}
-                    <p><i class="fa-solid fa-circle-exclamation"></i>&nbsp; {$err}</p>
+                    <p class="mb-0"><i class="fa-solid fa-circle-exclamation"></i>&nbsp; {$err}</p>
                 {/foreach}
             </div>
         {/if}

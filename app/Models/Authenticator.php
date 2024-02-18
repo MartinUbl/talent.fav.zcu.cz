@@ -40,10 +40,10 @@ class Authenticator implements Nette\Security\IAuthenticator
         $passwordSet = isset($password) && !empty($password);
 
         if ($googleIdSet && $passwordSet) {
-            throw new Nette\Security\AuthenticationException('Invalid use of authenticator', self::IDENTITY_NOT_FOUND);
+            throw new Nette\Security\AuthenticationException('Invalid use of authenticator', self::FAILURE);
         }
         if (!$googleIdSet && !$passwordSet) {
-            throw new Nette\Security\AuthenticationException('No credentials given', self::IDENTITY_NOT_FOUND);
+            throw new Nette\Security\AuthenticationException('No credentials given', self::FAILURE);
         }
 
         // no user
