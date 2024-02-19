@@ -1,0 +1,22 @@
+{block content}
+
+<div class="row">
+    <div class="col-12">
+
+        <h2>{_main.grabthelab.new_project}</h2>
+
+        <p>{_main.grabthelab.new_project_info}</p>
+
+        {form newProjectForm}
+            <div class="mb-3 form-parent">
+                {label project_name class=>'form-label' /}
+                <br /><span class="description">{_main.grabthelab.form.desc_project_name|noescape}</span>
+                {input project_name class=>'form-control'}
+            </div>
+            <div class="mb-3 d-grid">
+                {input submit class=>'btn btn-warning'}
+            </div>
+        {/form}
+
+    </div>
+</div>

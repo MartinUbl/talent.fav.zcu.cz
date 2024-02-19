@@ -183,6 +183,7 @@ div.menu {
 }
 
 .flash-container {
+    z-index: 999;
     position: fixed;
     top: 1em;
     left: 50%;
@@ -295,4 +296,54 @@ div.menu {
         font-family: 'Roboto Condensed';
         text-transform: uppercase;
     }
+}
+
+.admin-footer-link {
+    float: right;
+    color: white;
+}
+
+.admin-sec-btn {
+    display: block;
+    width: 100%;
+    padding: 0.2em;
+    border: 3px solid $accent-color;
+    text-align: center;
+    color: $accent-color;
+    font-family: 'Roboto Condensed';
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1;
+    transition: color linear 0.2s, background-color linear 0.2s;
+
+
+    font-size: 1.7em;
+    .smaller {
+        font-size: 0.6em;
+    }
+
+    &:hover {
+        color: white;
+        background-color: $accent-color;
+    }
+}
+
+.gtl-round {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    border: 3px solid $accent-color;
+    font-family: 'Roboto Condensed';
+}
+
+.description {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.gtl .form-label {
+    display: block;
+    width: 100%;
+    padding-top: 0.5em;
+    border-bottom: 2px solid $accent-color;
 }

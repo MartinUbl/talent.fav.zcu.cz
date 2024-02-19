@@ -1,0 +1,41 @@
+
+<div class="row">
+    <div class="col-12 mb-3">
+        <div class="gtl-round">
+            <div class="row">
+                <div class="col-1">
+                    <img src="{$baseUrl}/img/grabthelab.jpg" style="width: 100%; height: auto;" />
+                </div>
+                <div class="col-9">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>
+                            {if $round->proposal_start > new \DateTime()}
+                            {_main.grabthelab.state_upcoming}
+                            {elseif $round->proposal_end > new \DateTime()}
+                            {_main.grabthelab.state_active}
+                            {else}
+                            {_main.grabthelab.state_past}
+                            {/if}
+                            {_main.grabthelab.call} <span class="text-secondary">Grab the Lab</span> {_main.grabthelab.number} {$round->id}
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            {_main.grabthelab.apply_from} {$round->proposal_start|date('j.n.Y H:i')} {_main.grabthelab.apply_to} {$round->proposal_end|date('j.n.Y H:i')}.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            {_main.grabthelab.max_proposals}: {if !$round->max_proposals || $round->max_proposals === 0}{_main.grabthelab.unlimited}{else}{$round->max_proposals}{/if}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-flex align-items-center">
+                    <a href="{plink GrabTheLab:proposalCreate}" class="btn btn-warning" style="width: 100%; padding: 0.5em 0.3em; text-align: center;">{_main.grabthelab.apply_now}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

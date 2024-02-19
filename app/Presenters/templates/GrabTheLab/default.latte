@@ -1,3 +1,38 @@
-{* Latte template *}
 
 {block content}
+
+<div class="row">
+    <div class="col-12">
+
+        <h2>{_main.grabthelab.title}</h2>
+
+        <p>{_main.grabthelab.par1}</p>
+        <p>{_main.grabthelab.par2}</p>
+        <p>{_main.grabthelab.par3}</p>
+
+        {if $upcomingRound}
+
+        <h3>{_main.grabthelab.upcoming_round}</h3>
+
+        {control gtlRoundComponent $upcomingRound}
+
+        {elseif $activeRound}
+
+        <h3>{_main.grabthelab.active_round}</h3>
+
+        {control gtlRoundComponent $activeRound}
+
+        {else}
+        <p><i>{_main.grabthelab.no_upcoming}</i></p>
+        {/if}
+
+        <h3>{_main.grabthelab.current}</h3>
+
+        <p><i>{_main.grabthelab.no_current_call}</i></p>
+
+        <h3>{_main.grabthelab.past}</h3>
+
+        <p><i>{_main.grabthelab.no_past_projects}</i></p>
+
+    </div>
+</div>

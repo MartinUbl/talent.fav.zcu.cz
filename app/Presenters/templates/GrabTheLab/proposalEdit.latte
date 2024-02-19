@@ -1,0 +1,163 @@
+{block content}
+
+<div class="row">
+    <div class="col-12 gtl">
+
+        <h2>{_main.grabthelab.edit_project}</h2>
+
+        {if $step == 1}
+
+        <h3>{_main.grabthelab.edit_project_step_1}</h3>
+
+        <p>{_main.grabthelab.edit_project_step_1_desc}</p>
+
+        {form editProject1Form}
+            <div class="mb-3 form-parent">
+                {label project_name class=>'form-label' /}
+                <span class="description">{_main.grabthelab.form.desc_project_name|noescape}</span>
+                {input project_name class=>'form-control'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label scope class=>'form-label' /}
+                <span class="description">{_main.grabthelab.form.desc_scope|noescape}</span>
+                {input scope class=>'form-select'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label motivation class=>'form-label' /}
+                <span class="description">{_main.grabthelab.form.desc_motivation|noescape}</span>
+                {input motivation class=>'form-control'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label methods class=>'form-label' /}
+                <span class="description">{_main.grabthelab.form.desc_methods|noescape}</span>
+                {input methods class=>'form-control'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label anotation class=>'form-label' /}
+                <span class="description">{_main.grabthelab.form.desc_anotation|noescape}</span>
+                {input anotation class=>'form-control'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label length class=>'form-label' /}
+                <span class="description">{_main.grabthelab.form.desc_length|noescape}</span>
+                {input length class=>'form-select'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label contact_person_name class=>'form-label' /}
+                <span class="description">{_main.grabthelab.form.desc_contact_person_name|noescape}</span>
+                {input contact_person_name class=>'form-control'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label contact_person_email class=>'form-label' /}
+                <span class="description">{_main.grabthelab.form.desc_contact_person_email|noescape}</span>
+                {input contact_person_email class=>'form-control'}
+            </div>
+            <div class="mb-3 d-grid">
+                {input save class=>'btn btn-outline-warning mb-3'}
+                {input submit class=>'btn btn-warning'}
+            </div>
+        {/form}
+
+        {elseif $step == 2}
+
+        <h3>{_main.grabthelab.edit_project_step_2}</h3>
+
+        <p>{_main.grabthelab.edit_project_step_2_desc}</p>
+
+        {form editProject2Form}
+            {for $i = 0; $i < 5; $i++}
+            {if $i == 0}
+                        <h4>{_main.grabthelab.form.team_leader}</h4>
+                        {elseif $i == 1}
+                        <h4>{_main.grabthelab.form.team_leader_assistant}</h4>
+                        {else}
+                        <h4>{_main.grabthelab.form.team_member} {$i + 1} ({_main.grabthelab.form.team_member_optional})</h4>
+                        {/if}
+            <div class="row">
+                <div class="col-4">
+                    <div class="mb-3 form-parent">
+                        {label "member_name_$i" class=>'form-label' /}
+                        {input "member_name_$i" class=>'form-control'}
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="mb-3 form-parent">
+                        {label "member_school_$i" class=>'form-label' /}
+                        {input "member_school_$i" class=>'form-control'}
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="mb-3 form-parent">
+                        {label "member_class_$i" class=>'form-label' /}
+                        {input "member_class_$i" class=>'form-control'}
+                    </div>
+                </div>
+            </div>
+            {/for}
+
+            <div class="mb-3 d-grid">
+                {input save class=>'btn btn-outline-warning mb-3'}
+                {input submit class=>'btn btn-warning'}
+            </div>
+        {/form}
+
+        {elseif $step == 3}
+
+        <h3>{_main.grabthelab.edit_project_step_3}</h3>
+
+        <p>{_main.grabthelab.edit_project_step_3_desc|noescape}</p>
+
+        {form editProject3Form}
+
+            <div n:multiplier="finance_items">
+                <h5>{_main.grabthelab.form.fin_item_header}</h5>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="mb-3 form-parent">
+                            <input n:name="fin_name" class="form-control">
+                        </div>
+                    </div>
+                    {*<div class="col-4">
+                        <div class="mb-3 form-parent">
+                            <input n:name="fin_category" class="form-select">
+                        </div>
+                    </div>*}
+                    <div class="col-3">
+                        <div class="mb-3 form-parent">
+                            <input n:name="fin_price" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        {multiplier:remove class: "btn btn-warning"}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    {multiplier:add finance_items class: "btn btn-warning"}
+                </div>
+            </div>
+
+            <div class="mb-3 mt-5 d-grid">
+                {input save class=>'btn btn-outline-warning mb-3'}
+                {input submit class=>'btn btn-warning'}
+            </div>
+        {/form}
+
+        {elseif $step == 4}
+
+        <h3>{_main.grabthelab.edit_project_step_4}</h3>
+
+        <p>{_main.grabthelab.edit_project_step_4_desc}</p>
+
+        {elseif $step == 5}
+
+        <h3>{_main.grabthelab.edit_project_step_5}</h3>
+
+        <p>{_main.grabthelab.edit_project_step_5_desc}</p>
+
+        {/if}
+
+    </div>
+</div>

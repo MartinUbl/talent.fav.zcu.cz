@@ -4,3 +4,4 @@ services:
     - App\Configurator(googleClientId: %googleauth.client_id%, googleClientSecret: %googleauth.client_secret%)
 
     - App\Model\UserModel
+    - App\Model\GrabTheLabModel

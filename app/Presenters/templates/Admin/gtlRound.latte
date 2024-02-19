@@ -1,0 +1,52 @@
+{block content}
+
+<div class="row">
+    <div class="col-12">
+
+        <h2>Grab the Lab - Vyhlášení výzvy</h2>
+
+        <p>Zde najdete možnost vyhlásit novou výzvu, upravit stávající a prohlížet výzvy minulé.<p>
+
+        <h3>Nastávající výzva</h3>
+
+        {if $upcomingRound}
+        {control gtlRoundComponent $upcomingRound}
+        {else}
+        <p><i>Žádná nastávající výzva</i></p>
+        {/if}
+
+        {form roundEdit}
+            <div class="mb-3 form-parent">
+                {label start class=>'form-label' /}
+                {input start class=>'form-control'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label end class=>'form-label' /}
+                {input end class=>'form-control'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label max class=>'form-label' /}
+                {input max class=>'form-control'}
+            </div>
+            <div class="mb-3 d-grid">
+                {input submit class=>'btn btn-warning'}
+            </div>
+        {/form}
+
+        <h3>Aktuálně probíhající výzva</h3>
+
+        {if $activeRound}
+        {control gtlRoundComponent $activeRound}
+        {else}
+        <p><i>Žádná nastávající výzva</i></p>
+        {/if}
+
+        <h3>Proběhlé výzvy</h3>
+
+        {if $pastRounds->count() > 0}
+        {else}
+        <p><i>Žádná proběhlá výzva</i></p>
+        {/if}
+
+    </div>
+</div>

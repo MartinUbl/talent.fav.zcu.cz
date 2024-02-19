@@ -159,6 +159,7 @@ div.menu span {
 }
 
 .flash-container {
+  z-index: 999;
   position: fixed;
   top: 1em;
   left: 50%;
@@ -253,6 +254,53 @@ div.menu span {
   text-align: center;
   font-family: "Roboto Condensed";
   text-transform: uppercase;
+}
+
+.admin-footer-link {
+  float: right;
+  color: white;
+}
+
+.admin-sec-btn {
+  display: block;
+  width: 100%;
+  padding: 0.2em;
+  border: 3px solid #e0b100;
+  text-align: center;
+  color: #e0b100;
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  transition: color linear 0.2s, background-color linear 0.2s;
+  font-size: 1.7em;
+}
+.admin-sec-btn .smaller {
+  font-size: 0.6em;
+}
+.admin-sec-btn:hover {
+  color: white;
+  background-color: #e0b100;
+}
+
+.gtl-round {
+  display: block;
+  width: 100%;
+  padding: 1em;
+  border: 3px solid #e0b100;
+  font-family: "Roboto Condensed";
+}
+
+.description {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.gtl .form-label {
+  display: block;
+  width: 100%;
+  padding-top: 0.5em;
+  border-bottom: 2px solid #e0b100;
 }
 
 /*# sourceMappingURL=main.css.map */

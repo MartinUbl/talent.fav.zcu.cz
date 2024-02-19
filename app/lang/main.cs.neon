@@ -1,5 +1,11 @@
 title: "Podpora středoškolských studentů"
 
+generic:
+    not_signed_in: "Pro tuto akci je nutné se přihlásit!"
+    insufficient_permissions: "Pro tuto akci nemáte dostatečná oprávnění!"
+    no_proposal_active: "Žádný projekt není v editovatelném stavu"
+    not_an_email: "Zadejte validní e-mailovou adresu"
+
 menu:
     homepage: "Domovská stránka"
     grabthelab: "Grab the Lab"
@@ -8,6 +14,7 @@ menu:
     signin: "Přihlásit se"
     signup: "Registrovat se"
     userloggedas: "Přihlášen jako"
+    logout: "Odhlásit se"
 
 home:
     title: "Portál podpory středoškolských studentů"
@@ -20,6 +27,94 @@ home:
     scholarship_subtitle: "Potřebuješ finanční podporu pro svůj rozvoj?"
     talentambassador_title: "Talent ambassador"
     talentambassador_subtitle: "Chceš víc, než ti střední škola může poskytnout?"
+
+scope:
+    physics: "Fyzika"
+    geomatics: "Geomatika"
+    informatics: "Informatika a výpočetní technika"
+    cybernetics: "Kybernetika"
+    mathematics: "Matematika"
+    mechanics: "Mechanika"
+    buildings: "Stavební inženýrství"
+
+grabthelab:
+    title: "Grab the Lab"
+    par1: "Sháníš laboratoř pro svůj tým? Chceš mít místo, kde se s cházet s kamarády a pracovat na vašem projektu? Máme pro vás laboratoř, která vůbec není prázdná. Je v ní 5 počítačů, základní kancelářské vybavení, tabule na fixy, klid a teplo, ... a gauč."
+    par2: "Co udělat pro to, abyste laboratoř dostali? Až bude další kolo soutěže vyhlášeno, dejte dohromady přihlášku a odešlete ji. My se na ni pak podíváme a zhodnotíme, jestli je možné vám vyhovět. Zohledňovat budeme spousty věcí, takže si na přihlášce dejte záležet!"
+    par3: "Níže můžete vidět, jaké projekty jsme již podpořili, jaký projekt aktuálně probíhá a případně zda je zrovna vyhlášen příjem přihlášek."
+
+    current: "Probíhající projekt"
+    no_current_call: "Momentálně žádný projekt neprobíhá, ani není otevřena žádná výzva."
+    past: "V minulosti jsme podpořili"
+
+    upcoming_round: "Chystáme výzvu"
+    active_round: "Aktuálně probíhající výzva"
+    no_upcoming: "Momentálně nechystáme žádnou výzvu."
+    no_past_projects: "Zatím tu není žádný projekt"
+
+    state_upcoming: "Nastávající"
+    state_active: "Aktuální"
+    state_past: "Proběhlá"
+    call: "výzva"
+    number: "číslo"
+    apply_from: "Příjem přihlášek od"
+    apply_to: "do"
+    max_proposals: "Maximální počet přihlášek"
+    unlimited: "neomezeno"
+    apply_now: "Přihlásit se"
+
+    new_project: "Nový návrh projektu"
+    new_project_info: "Nyní vytváříte svůj projekt pro výzvu Grab the Lab. Dejte Vašemu projektu nějaké jméno. Nebojte, jméno půjde upravit."
+    edit_project: "Úprava návrhu projektu"
+    edit_project_step_1: "Krok 1 - základní informace"
+    edit_project_step_2: "Krok 2 - řešitelský tým"
+    edit_project_step_3: "Krok 3 - financování"
+    edit_project_step_4: "Krok 4 - plán projektu"
+    edit_project_step_5: "Krok 5 - výstupy"
+    edit_project_step_1_desc: "V tomto kroce nám představte svůj projekt. Budeme po Vás chtít hlavně jeho jméno, zaměření, nějakou Vaši představu a také kontaktní osobu z Vaší školy."
+    edit_project_step_2_desc: "Nyní zadejte všechny osoby, které se budou účastnit projektu. Musíme vědět, komu laboratoř půjčujeme, abychom mohli například správně vytvořit přístupové karty a hlavně abychom věděli s kým komunikovat."
+    edit_project_step_3_desc: "Finance jsou další velice důležitou položkou. Pokuste se nám rozepsat, na co Vám můžeme poskytnout peníze. Rozdělte je prosím do následujících kategorií:<ul><li>Drobná elektronika - sem patří například Arduino, Raspberry Pi, ESP desky, nebo další moduly k nim připojitelné, kabely, adaptéry a jiné</li><li>Kurzy a školení - pokud si chcete zakoupit nějaký kurz nebo školení, např. z Coursera, Udemy nebo podobných</li><li>Ostatní hmotné vybavení - například nějaké další kacelářské potřeby, pomůcky k projektu a podobně</li><li>Licence - pokud potřebujete licenci na nějaký speciální program a univerzita ji zatím nemá</li><li>Ostatní, nespecifikované - pokud potřebujete něco, co se nikam jinam nevejde</li></ul>"
+    edit_project_step_4_desc: "Měli byste mít alespoň rámcovou představu o tom, jak se bude projekt vyvíjet a jaké bude mít etapy. Toto není závazné, jde nám jen o představu, jak projekt bude vypadat a co máme očekávat."
+    edit_project_step_5_desc: "Nakonec se nám pokuste popsat, co bude výstupem Vašeho projektu - jestli to bude nějaký software, metoda nebo jiné věci. Prostě... na co se máme těšit."
+
+    projectlength: "1 měsíc|%count% měsíce|%count% měsíců"
+
+    form:
+        project_name: "Název projektu"
+        desc_project_name: "Zvolte si název projektu - můžete zadat i nějaké Vaše jméno, ale vždy připojte i nějaký popis.<br />Příklady (správné):<ul><li>AstroX - odhad typu a výšky mraků ze snímů pořízených z ISS</li><li>Aplikace pro automatickou identifikaci samic hrabáče kapského</li></ul>Příklady (špatné!):<ul><li>SuperApp2024</li><li>Mobilní appka pro děti</li></ul>"
+        namelen_alert: "Délka názvu projektu musí být mezi %min% a %max% znaky"
+        mandatory: "Toto pole je povinné"
+        save: "Uložit"
+        continue: "Pokračovat"
+
+        scope: "Obor projektu"
+        desc_scope: "Vyberte obor projektu z následujícího výčtu. Příklady, kam spadají jednotlivé projekty:<ul><li>Fyzika - plazma a nanovrstvy, termočlánky, vlnění a radioaktivita</li><li>Geomatika - zeměměřičství, geografické informace a mapové informační systémy</li><li>Informatika a výpočetní technika - programování aplikací, weby, umělá inteligence, informační systémy, elektronika</li><li>Kybernetika - robotika, automatizace, řízení, drony a biologické systémy</li><li>Matematika - teoretická, diskrétní, numerická a jiná matematika, analýza burzy, simulace</li><li>Mechanika - analýza konstrukcí, materiálové inženýrství, pevnost a jiné</li><li>Stavební inženýrství - projektování staveb a moderních budov, návrh konstrukcí a jiné</li></ul>"
+
+        motivation: "Motivace"
+        desc_motivation: "Krátce popište motivaci projektu - proč jej vytváříte, jaký je Váš cíl, jaký problém budete řešit. V tomto poli zatím nepopisujte jak jej budete řešit.<br />Například: 'Náš projekt má za cíl pomoci místním zemědělcům se zvýšením úrody, jelikož se dlouhodobě potýkají s problémy nízké úrodnosti, vysokého množství škůdců a zlodějů, kteří kradou kedlubny.'"
+        methods: "Přehled metod řešení"
+        desc_methods: "Popište, jakými metodami byste rádi problém řešili. Toto pole není závazné, ale vyplňte jej, abychom měli přestavu, do jaké míry jste si vědomi složitosti daného problému.<br />Například: 'Použijeme pokročilé metody umělé inteligence pro analýzu fotografického materiálu, který detekuje pohyb zlodějů a upozorní vlastníka pozemku na nezvaného návštěvníka.'"
+        anotation: "Anotace projektu"
+        desc_anotation: "Sem patří text, který popíše Váš projekt hodnotící komisi. Zde můžete částečtě duplikovat výše uvedené položky.<br />Například: 'Projekt ZlodějStop slouží jako systém pro ochranu zemědělských ploch před zloději a nezvanými návštěvníky, kteří kradou nebo jinak poškozují úrodu. Použijeme metody umělé inteligence pro detekci narušitelů a včasné varování vlastníků pozemku. Doufáme, že naše řešení pomůže místním farmářům.'"
+
+        length: "Délka projektu"
+        desc_length: "Na jak dlouho budete chtít laboratoř zapůjčit? Pozor, i tato položka má vliv na rozhodování o tom, koho podpoříme. Pokuste se odhadnout reálnou časovou náročnost projektu."
+
+        contact_person_name: "Jméno kontaktní osoby z personálu Vaší školy"
+        desc_contact_person_name: "Sem napište kontaktní osobu z pedagogického sboru Vaší školy. Tento údaj potřebujeme proto, abychom mohli dohodnout nějaké formality a samozřejmě abychom pak Váš tým měli u koho chválit. Může to být například Váš třídní učitel nebo učitel informatiky."
+        contact_person_email: "E-mail kontaktní osoby z personálu Vaší školy"
+        desc_contact_person_email: "Sem napište e-mail výše uvedené osoby, na kterém je k zastižení."
+
+        team_leader: "Vedoucí týmu"
+        team_leader_assistant: "Zástupce vedoucího týmu"
+        team_member: "Člen týmu č."
+        member_name: "Jméno a příjmení"
+        member_school: "Název školy"
+        member_class: "Třída"
+        team_member_optional: "nepovinné"
+
+        fin_item_header: "Finanční položka"
+        finance_item_add: "Přidat další"
 
 signup:
     title: "Registrace"

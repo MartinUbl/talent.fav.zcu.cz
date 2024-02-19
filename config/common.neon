@@ -21,6 +21,7 @@ di:
 
 extensions:
     translation: Contributte\Translation\DI\TranslationExtension
+    - Contributte\FormMultiplier\DI\MultiplierExtension
 
 translation:
     locales:
