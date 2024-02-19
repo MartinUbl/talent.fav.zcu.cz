@@ -244,12 +244,20 @@ final class GrabTheLabPresenter extends BasePresenter
             return $default;
         };
 
+        $mlItems = $guard('finance_items', null);
+
         $multiplier = $form->addMultiplier('finance_items', function (\Nette\Forms\Container $container, Form $form) {
-            $container->addText('fin_name', $this->translator->translate('main.grabthelab.form.finance_name'));
-            //$container->addSelect('fin_category', $this->translator->translate('main.grabthelab.form.finance_category'), [1,2]);
-                //\App\Model\Enum\FinanceCategory::getTranslatedEnum(function($str) { return $this->translator->translate($str); }));
-            $container->addInteger('fin_price', $this->translator->translate('main.grabthelab.form.finance_price'));
-        }, 1, 10);
+            $container->addText('name', $this->translator->translate('main.grabthelab.form.finance_name'));
+            $container->addSelect('category', $this->translator->translate('main.grabthelab.form.finance_category'),
+                \App\Model\Enum\FinanceCategory::getTranslatedEnum(function($str) { return $this->translator->translate($str); }));
+            $container->addText('price', $this->translator->translate('main.grabthelab.form.finance_price'))
+                ->addRule(Form::INTEGER, $this->translator->translate('main.generic.not_a_number'))
+                ->addRule(Form::MIN, $this->translator->translate('main.generic.invalid_price'), 1);
+        }, 1, 20);
+
+        if ($mlItems) {
+            $multiplier->setValues($mlItems);
+        }
 
         $multiplier->addCreateButton($this->translator->translate('main.grabthelab.form.finance_item_add'));
         $multiplier->addRemoveButton($this->translator->translate('main.grabthelab.form.finance_item_remove'));
@@ -268,9 +276,6 @@ final class GrabTheLabPresenter extends BasePresenter
 
         $vals = $form->values;
 
-        dump($vals->finance_items[0]->text);
-        die;
-
         $existing = $this->getUser()->isLoggedIn() ? $this->grabthelab->getProjectDraft($this->getUser()->id) : null;
         if (!$existing) {
             $this->redirect('GrabTheLab:');
@@ -278,7 +283,16 @@ final class GrabTheLabPresenter extends BasePresenter
 
         $data = json_decode($existing->data, true);
 
-        //
+        $finItems = [];
+        foreach ($vals->finance_items as $fi) {
+            $finItems[] = [
+                'name' => $fi->name,
+                'category' => $fi->category,
+                'price' => $fi->price,
+            ];
+        }
+
+        $data['finance_items'] = $finItems;
 
         $this->grabthelab->updateProject($this->getUser()->id, $data);
 

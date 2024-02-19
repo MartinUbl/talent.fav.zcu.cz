@@ -5,6 +5,8 @@ generic:
     insufficient_permissions: "Pro tuto akci nemáte dostatečná oprávnění!"
     no_proposal_active: "Žádný projekt není v editovatelném stavu"
     not_an_email: "Zadejte validní e-mailovou adresu"
+    not_a_number: "Zadejte platné číslo"
+    invalid_price: "Neplatná cena"
 
 menu:
     homepage: "Domovská stránka"
@@ -36,6 +38,13 @@ scope:
     mathematics: "Matematika"
     mechanics: "Mechanika"
     buildings: "Stavební inženýrství"
+
+finance_category:
+    electronics: "Drobná elektronika"
+    courses: "Kurzy a školení"
+    minor_tangible: "Drobný hmotný majetek"
+    licences: "Licence"
+    others: "Ostatní, nezařazené"
 
 grabthelab:
     title: "Grab the Lab"
@@ -113,8 +122,13 @@ grabthelab:
         member_class: "Třída"
         team_member_optional: "nepovinné"
 
-        fin_item_header: "Finanční položka"
+        fin_item_header: "Finanční položky"
         finance_item_add: "Přidat další"
+        finance_item_remove: "Odstranit"
+
+        finance_name: "Název položky"
+        finance_category: "Kategorie"
+        finance_price: "Odhadovaná cena"
 
 signup:
     title: "Registrace"
