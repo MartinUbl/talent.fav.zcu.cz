@@ -70,11 +70,11 @@ class GrabTheLabModel extends BaseModel {
     }
 
     public function getProjectDraft($owner_id) {
-        return $this->getTable()->where('state', 'draft')->fetch();
+        return $this->getTable()->where('users_id', $owner_id)->where('state', 'draft')->fetch();
     }
 
     public function getProjectProposed($owner_id) {
-        return $this->getTable()->where('state', 'proposed')->fetch();
+        return $this->getTable()->where('users_id', $owner_id)->where('state', 'proposed')->fetch();
     }
 
     public function updateProject($id, $data) {
