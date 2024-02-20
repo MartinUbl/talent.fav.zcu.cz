@@ -1,0 +1,17 @@
+{block content}
+
+<div class="row">
+    <div class="col-12">
+
+        <h2>{_main.grabthelab.proposal_sent}</h2>
+
+        <p>{_main.grabthelab.proposal_sent_info, ['project_name' => $proposalData['project_name']] |noescape}<p>
+
+        <div class="row">
+            <div class="col-12 mb-3 d-grid">
+                <a n:href="exportProposedPdf!" class="btn btn-warning mb-3"><i class="fa-solid fa-file-pdf"></i>&nbsp; {_main.grabthelab.export_pdf}</a>
+            </div>
+        </div>
+
+    </div>
+</div>

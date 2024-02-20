@@ -79,6 +79,8 @@ grabthelab:
     max_proposals: "Maximální počet přihlášek"
     unlimited: "neomezeno"
     apply_now: "Přihlásit se"
+    edit_draft: "Upravit návrh"
+    proposed_already: "Zažádáno"
 
     new_project: "Nový návrh projektu"
     new_project_info: "Nyní vytváříte svůj projekt pro výzvu Grab the Lab. Dejte Vašemu projektu nějaké jméno. Nebojte, jméno půjde upravit."
@@ -114,6 +116,12 @@ grabthelab:
     backlink_long_4_comment: "jsou fáze seřazené jak půjdou po sobě? "
     backlink_long_5_comment: "jsou uvedeny všechny plánované výstupy?"
     backlink_complete: "Shrnutí"
+
+    export_pdf: "Exportovat PDF"
+    propose_project: "Odeslat projekt!"
+
+    proposal_sent: "Návrh byl odeslán!"
+    proposal_sent_info: "Váš projekt <b>%project_name%</b> byl úspěšně odeslán ke schválení. Vyčkejte prosím, až výzva skončí a až všechny projekty vyhodnotíme. Výsledek pošleme na Váš e-mail, který jste uvedli při registraci. Děkujeme!"
 
     missing_notice: "Váš projekt <b>%project_name%</b> je momentálně v rozpracovaném stádiu. Ještě Vám chybí vyplnit pár věcí, než bude možné projekt odeslat:"
     missing:

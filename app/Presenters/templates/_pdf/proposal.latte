@@ -1,0 +1,212 @@
+<html>
+    <head>
+        <style>
+            .wide {
+                width: 100%;
+            }
+            a {
+                color: #e0b100;
+            }
+            h1, h2 {
+                color: #e0b100;
+                text-align: center;
+                font-family: 'Roboto Condensed';
+                text-transform: uppercase;
+            }
+            h3 {
+                border-bottom: 3px solid #e0b100;
+                text-align: center;
+                font-family: 'Roboto Condensed';
+                text-transform: uppercase;
+            }
+            h4 {
+                border-bottom: 2px solid #e0b100;
+            }
+
+            table {
+                width: 100%;
+                border-radius: 10px;
+                border: none;
+                border-collapse: collapse;
+            }
+
+            .sumrow {
+                background-color: #F0E0CD;
+            }
+            .sumrow td {
+                border-top: 2px solid #F0D09C;
+            }
+
+            .ta {
+                width: 33% !important;
+            }
+            .tw {
+                width: 66% !important;
+            }
+            table.t3 td, table.t3 th {
+                width: 33%;
+            }
+
+            td {
+                width: auto;
+                border:none;
+                padding: 0.3em;
+                vertical-align: top;
+                background-color: #FFF0ED;
+            }
+
+            table.nobg td {
+                background-color: white !important;
+            }
+
+            td.left {
+                font-weight: bold;
+                text-align: right;
+            }
+
+            th {
+                text-align: left;
+                background-color: #e0b100;
+                color: #000000;
+                border: none;
+                padding: 0.3em;
+            }
+
+            .small {
+                font-size: 0.7em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wide">
+            {$res['fav_logo']|noescape}
+            {$res['gtl_logo']|noescape}
+        </div>
+        <h1>Grab the Lab</h1>
+        <h2>Návrh projektu</h2>
+        <h3>{$data['project_name']}</h3>
+
+        <h4>Základní informace</h4>
+
+        <table class="nobg">
+            <tr>
+                <td class="left">Název&nbsp;projektu</td>
+                <td>{$data['project_name']}</td>
+            </tr>
+            <tr>
+                <td class="left">Obor</td>
+                <td>{$tr_scopes[$data['scope']]}</td>
+            </tr>
+            <tr>
+                <td class="left">Motivace</td>
+                <td>{$data['motivation']}</td>
+            </tr>
+            <tr>
+                <td class="left">Metody&nbsp;řešení</td>
+                <td>{$data['methods']}</td>
+            </tr>
+            <tr>
+                <td class="left">Anotace</td>
+                <td>{$data['anotation']}</td>
+            </tr>
+            <tr>
+                <td class="left">Délka&nbsp;podpory</td>
+                <td>{$tr_lengths[$data['length']]}</td>
+            </tr>
+            <tr>
+                <td class="left">Kontaktní&nbsp;osoba</td>
+                <td>{$data['contact_person_name']} ({$data['contact_person_email']})</td>
+            </tr>
+        </table>
+
+        <h4>Řešitelský tým</h4>
+
+        <table class="t3">
+            <tr>
+                <th>Jméno a příjmení</th>
+                <th>Funkce</th>
+                <th>Škola, třída</th>
+            </tr>
+            {for $i = 0; $i < 5; $i++}
+                {if isset($data['member_name_'.$i]) && !empty($data['member_name_'.$i])}
+                    <tr>
+                        <td>{$data['member_name_'.$i]}</td>
+                        <td>
+                            {if $i == 0}
+                            vedoucí týmu
+                            {elseif $i == 1}
+                            zástupce vedoucího týmu
+                            {else}
+                            člen
+                            {/if}
+                        </td>
+                        <td>{$data['member_school_'.$i]} ({$data['member_class_'.$i]})</td>
+                    </tr>
+                {/if}
+            {/for}
+        </table>
+
+        <h4>Financování</h4>
+
+        {var $totalPrice = 0}
+        <table class="t3">
+            <tr>
+                <th>Položka</th>
+                <th>Kategorie</th>
+                <th>Odhadovaná cena</th>
+            </tr>
+            {foreach $data['finance_items'] as $fi}
+                <tr>
+                    <td>{$fi['name']}</td>
+                    <td>{$tr_fincategories[$fi['category']]}</td>
+                    <td>{$fi['price']} Kč</td>
+                    {var $totalPrice = $totalPrice + $fi['price']}
+                </tr>
+            {/foreach}
+            <tr class="sumrow">
+                <td>Celkem</td>
+                <td></td>
+                <td>{$totalPrice} Kč</td>
+            </tr>
+        </table>
+
+        <h4>Fáze projektu</h4>
+
+        <table class="t2">
+            <tr>
+                <th class="ta">Název</th>
+                <th class="tw">Popis</th>
+            </tr>
+            {foreach $data['phases'] as $ph}
+                <tr>
+                    <td class="ta">{$ph['name']}</td>
+                    <td class="tw">{$ph['description']}</td>
+                </tr>
+            {/foreach}
+        </table>
+
+        <h4>Výstupy</h4>
+
+        <table class="t3">
+            <tr>
+                <th>Název</th>
+                <th>Typ výstupu</th>
+                <th>Popis</th>
+            </tr>
+            {foreach $data['outputs'] as $op}
+                <tr>
+                    <td>{$op['name']}</td>
+                    <td>{$tr_outtypes[$op['type']]}</td>
+                    <td>{$op['description']}</td>
+                </tr>
+            {/foreach}
+        </table>
+
+        <hr />
+        <p class="small">
+            Vygenerováno: {$cur_date}<br />
+            Autor: {$cur_author}<br />
+            <a href="https://talent.fav.zcu.cz/">https://talent.fav.zcu.cz/</a>
+        </p>
+    </body>
+</html>

@@ -73,6 +73,10 @@ class GrabTheLabModel extends BaseModel {
         return $this->getTable()->where('state', 'draft')->fetch();
     }
 
+    public function getProjectProposed($owner_id) {
+        return $this->getTable()->where('state', 'proposed')->fetch();
+    }
+
     public function updateProject($id, $data) {
         $this->getTable()->where('id', $id)->update([
             'data' => is_array($data) ? json_encode($data) : $data
@@ -91,7 +95,7 @@ class GrabTheLabModel extends BaseModel {
         $this->table('grabthelab_proposals')->insert([
             'grabthelab_project_id' => $id,
             'grabthelab_rounds_id' => $rounds_id,
-            'proposed_dat' => new \DateTime()
+            'proposed_at' => new \DateTime()
         ]);
     }
 };

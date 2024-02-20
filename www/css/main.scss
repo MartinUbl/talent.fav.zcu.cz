@@ -171,6 +171,18 @@ div.menu {
     position: relative;
 }
 
+.form-control, .form-select {
+    background-color: #FFF1C0;
+    color: black;
+    font-family: 'Roboto Condensed';
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: $accent-color;
+    background-color: #FFF1E0;
+    box-shadow: 0 0 0 0.25rem rgba(240,210,0,.25);
+}
+
 .form-error-message {
     display: block;
     position: absolute;
@@ -345,7 +357,12 @@ div.menu {
     display: block;
     width: 100%;
     padding-top: 0.5em;
+    font-size: 1.5em;
     border-bottom: 2px solid $accent-color;
+
+    &.smaller {
+        font-size: 0.8em;
+    }
 }
 
 .gtl-nav {

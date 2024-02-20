@@ -23,7 +23,8 @@
 		"google/apiclient": "^2.15",
 		"robmorgan/phinx": "^0.16.0",
 		"symfony/yaml": "^7.0",
-		"contributte/forms-multiplier": "master"
+		"contributte/forms-multiplier": "master",
+		"contributte/pdf": "master"
 	},
 	"autoload": {
 		"psr-4": {

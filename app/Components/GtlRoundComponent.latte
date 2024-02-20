@@ -33,7 +33,16 @@
                     </div>
                 </div>
                 <div class="col-2 d-flex align-items-center">
-                    <a href="{plink GrabTheLab:proposalCreate}" class="btn btn-warning" style="width: 100%; padding: 0.5em 0.3em; text-align: center;">{_main.grabthelab.apply_now}</a>
+                    {if $round->proposal_start < new \DateTime() && $round->proposal_end > new \DateTime()}
+                        {if $hasDraft}
+                            <a href="{plink GrabTheLab:proposalEdit}" class="btn btn-warning" style="width: 100%; padding: 0.5em 0.3em; text-align: center;">{_main.grabthelab.edit_draft}</a>
+                        {elseif $hasProposed}
+                            <a href="{plink GrabTheLab:proposalSent}" class="btn btn-warning" disabled style="width: 100%; padding: 0.5em 0.3em; text-align: center;">{_main.grabthelab.proposed_already}</a>
+                        {else}
+                            <a href="{plink GrabTheLab:proposalCreate}" class="btn btn-warning" style="width: 100%; padding: 0.5em 0.3em; text-align: center;">{_main.grabthelab.apply_now}</a>
+                        {/if}
+                    {else}
+                    {/if}
                 </div>
             </div>
         </div>
