@@ -11,8 +11,14 @@ class GtlRoundComponent extends \Nette\Application\UI\Control {
 
     public function render($roundRecord) {
 
-        $hasDraft = $this->grabthelab->getProjectDraft($this->userId) ? true : false;
-        $hasProposed = $this->grabthelab->getProjectProposed($this->userId) ? true : false;
+        if ($this->userId) {
+            $hasDraft = $this->grabthelab->getProjectDraft($this->userId) ? true : false;
+            $hasProposed = $this->grabthelab->getProjectProposed($this->userId) ? true : false;
+        }
+        else {
+            $hasDraft = false;
+            $hasProposed = false;
+        }
 
         $this->template->round = $roundRecord;
         $this->template->hasDraft = $hasDraft;

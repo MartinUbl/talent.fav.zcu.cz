@@ -76,6 +76,12 @@ body {
     position: relative;
 }
 
+.preparing {
+    font-size: 2.5em;
+    text-align: center;
+    color: $accent-color;
+}
+
 .lang-selector {
     position: absolute;
     top: 50%;

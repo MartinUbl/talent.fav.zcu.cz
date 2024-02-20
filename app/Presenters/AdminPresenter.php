@@ -33,7 +33,7 @@ class AdminPresenter extends BasePresenter
     }
 
     public function createComponentGtlRoundComponent() {
-        return new \App\Components\GtlRoundComponent();
+        return new \App\Components\GtlRoundComponent($this->grabthelab, null);
     }
 
     public function createComponentRoundEdit() {

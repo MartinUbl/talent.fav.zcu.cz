@@ -61,6 +61,12 @@ body {
   position: relative;
 }
 
+.preparing {
+  font-size: 2.5em;
+  text-align: center;
+  color: #e0b100;
+}
+
 .lang-selector {
   position: absolute;
   top: 50%;

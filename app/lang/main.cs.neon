@@ -7,6 +7,7 @@ generic:
     not_an_email: "Zadejte validní e-mailovou adresu"
     not_a_number: "Zadejte platné číslo"
     invalid_price: "Neplatná cena"
+    preparing: "Výzva se připravuje!"
 
 menu:
     homepage: "Domovská stránka"
@@ -194,6 +195,19 @@ grabthelab:
 
         output_item_add: "Přidat další"
         output_item_remove: "Odstranit"
+
+scholarship:
+    title: "Stipendium děkana"
+    par1: "Tuto výzvu pro Vás teprve připravujeme. Buďte prosím trpěliví, ladíme všechny detaily tak, aby podmínky byly férové pro všechny!"
+    par2: "Stipendium děkana je výzva pro středoškolské studenty, kteří potřebují dodatečné prostředky na splnění jejich profesních snů. Fakulta aplikovaných věd ráda podpoří studenty plné nadějí a ambicí, aby jejich nadšení nevyhaslo a mohli se věnovat tomu, co mají rádi."
+
+talentambassador:
+    title: "Talent ambassador"
+    par1: "Chceš víc, než ti je schopná střední škola dát? Máš zájem o vědu a techniku, rád rozvíjíš své znalosti a schopnosti? Chceš spolupracovat s experty v dané problematice? Chceš se propojit s univerzitním prostředím ještě před tím, než na univerzitě začneš studovat?"
+    par2: "Stačí jít naproti, my už na tebe čekáme. Každý má talent, pomůžeme ti objevit ten tvůj."
+    par3: "S čím ti může talent ambassador pomoci?<ul><li>máš zajímavý projekt a chceš ho posunout dál</li><li>chceš se naučit něco nového</li><li>zajímá tě nějaký konkrétní obor a chceš odborného mentora</li><li>vybíráš si téma Středoškolské odborné činnosti (SOČ) nebo maturitní práce, ale nevíš si rady</li><li>chceš se podívat na FAVku, třeba do nějaké laboratoře</li><li>chceš se pochlubit s nějakým svým projektem</li><li>a mnoho dalšího...</li></ul>"
+    par4: "Neboj se ozvat, čekáme na tebe."
+    par5: "<b>Ing. Martin Úbl</b><br /><i>Talent ambasador</i><br />Discord: martinubl<br />E-mail: <a href='mailto:talent@fav.zcu.cz'>talent@fav.zcu.cz</a>"
 
 signup:
     title: "Registrace"
