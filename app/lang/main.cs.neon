@@ -46,6 +46,14 @@ finance_category:
     licences: "Licence"
     others: "Ostatní, nezařazené"
 
+output_type:
+    software: "Software"
+    hardware: "Hardware"
+    method: "Metoda, algoritmus"
+    procedure: "Postup, metodika"
+    literature: "Dokumentace, kniha, výukový materiál"
+    others: "Ostatní"
+
 grabthelab:
     title: "Grab the Lab"
     par1: "Sháníš laboratoř pro svůj tým? Chceš mít místo, kde se s cházet s kamarády a pracovat na vašem projektu? Máme pro vás laboratoř, která vůbec není prázdná. Je v ní 5 počítačů, základní kancelářské vybavení, tabule na fixy, klid a teplo, ... a gauč."
@@ -83,10 +91,44 @@ grabthelab:
     edit_project_step_1_desc: "V tomto kroce nám představte svůj projekt. Budeme po Vás chtít hlavně jeho jméno, zaměření, nějakou Vaši představu a také kontaktní osobu z Vaší školy."
     edit_project_step_2_desc: "Nyní zadejte všechny osoby, které se budou účastnit projektu. Musíme vědět, komu laboratoř půjčujeme, abychom mohli například správně vytvořit přístupové karty a hlavně abychom věděli s kým komunikovat."
     edit_project_step_3_desc: "Finance jsou další velice důležitou položkou. Pokuste se nám rozepsat, na co Vám můžeme poskytnout peníze. Rozdělte je prosím do následujících kategorií:<ul><li>Drobná elektronika - sem patří například Arduino, Raspberry Pi, ESP desky, nebo další moduly k nim připojitelné, kabely, adaptéry a jiné</li><li>Kurzy a školení - pokud si chcete zakoupit nějaký kurz nebo školení, např. z Coursera, Udemy nebo podobných</li><li>Ostatní hmotné vybavení - například nějaké další kacelářské potřeby, pomůcky k projektu a podobně</li><li>Licence - pokud potřebujete licenci na nějaký speciální program a univerzita ji zatím nemá</li><li>Ostatní, nespecifikované - pokud potřebujete něco, co se nikam jinam nevejde</li></ul>"
-    edit_project_step_4_desc: "Měli byste mít alespoň rámcovou představu o tom, jak se bude projekt vyvíjet a jaké bude mít etapy. Toto není závazné, jde nám jen o představu, jak projekt bude vypadat a co máme očekávat."
-    edit_project_step_5_desc: "Nakonec se nám pokuste popsat, co bude výstupem Vašeho projektu - jestli to bude nějaký software, metoda nebo jiné věci. Prostě... na co se máme těšit."
+    edit_project_step_4_desc: "Měli byste mít alespoň rámcovou představu o tom, jak se bude projekt vyvíjet a jaké bude mít etapy. Toto není závazné, jde nám jen o představu, jak projekt bude vypadat a co máme očekávat. Typicky můžete zvolit následující schéma:<ul><li>Analýza - prozkoumáme existující metody a způsoby řešení daného problému</li><li>Návrh - navrhneme naše řešení na základě poznatků z analýzy</li><li>Implementace - naprogramujeme, namodelujeme nebo jinak sestavíme naše řešení</li><li>Testování, ověření - ověříme, zda naše řešení funguje jak má, otestujeme na cílovém prostředí</li></ul>"
+    edit_project_step_5_desc: "Nakonec se nám pokuste popsat, co bude výstupem Vašeho projektu - jestli to bude nějaký software, metoda nebo jiné věci. Prostě... na co se máme těšit. Příklady:<ul><li>Software - cokoliv co naprogramujete, ať už je to webovka, mobilní aplikace nebo pokusný algoritmus</li><li>Hardware - cokoliv co sestrojíte, spájíte, propojíte</li><li>Metoda, algoritmus - pokud je výstupem nějaký unikátní algoritmus nebo metoda zpracování dat</li><li>Postup, metodika - pokud je výstupem třeba popis výroby nějakého materiálu a podobně</li><li>Dokumentace, kniha, výukový materiál - pokud v projektu vzniknula nějaká dokumentace, návod, výukový materiál nebo cokoliv podobného</li><li>Ostatní - cokoliv, co se jinam nehodí</li></ul>"
 
     projectlength: "1 měsíc|%count% měsíce|%count% měsíců"
+
+    project_complete: "Shrnutí návrhu projektu"
+    project_complete_info: "Váš projekt <b>%project_name%</b> by měl být připraven. Pokud chcete ještě něco upravit, klidně ještě před odesláním návrhu projektu můžete. Jakmile ale návrh odešlete, nebude možné nic měnit."
+    backlink_1: "Základní"
+    backlink_2: "Tým"
+    backlink_3: "Finance"
+    backlink_4: "Plán"
+    backlink_5: "Výstupy"
+    backlink_long_1: "Základní informace"
+    backlink_long_2: "Řešitelský tým"
+    backlink_long_3: "Financování"
+    backlink_long_4: "Plán projektu"
+    backlink_long_5: "Výstupy"
+    backlink_long_1_comment: "zadali jste správně všechny základní informace? Je jméno projektu finální dle Vašich představ?"
+    backlink_long_2_comment: "jsou všechna jména členů týmu správná?"
+    backlink_long_3_comment: "nezapomněli jste například uvést nějaké položky, které budete chtít nakoupit?"
+    backlink_long_4_comment: "jsou fáze seřazené jak půjdou po sobě? "
+    backlink_long_5_comment: "jsou uvedeny všechny plánované výstupy?"
+    backlink_complete: "Shrnutí"
+
+    missing_notice: "Váš projekt <b>%project_name%</b> je momentálně v rozpracovaném stádiu. Ještě Vám chybí vyplnit pár věcí, než bude možné projekt odeslat:"
+    missing:
+        scope: "obor projektu"
+        motivation: "motivace vzniku projektu"
+        methods: "metody řešení"
+        anotation: "anotace projektu"
+        length: "délka podpory"
+        contact_person_name: "kontaktní osoba"
+        contact_person_email: "e-mail kontaktní osoby"
+        member_name_0: "vedoucí týmu"
+        member_name_1: "zástupce vedoucího týmu"
+        finance_items: "financování projektu"
+        phases: "fáze projektu"
+        outputs: "výstupy projektu"
 
     form:
         project_name: "Název projektu"
@@ -129,6 +171,21 @@ grabthelab:
         finance_name: "Název položky"
         finance_category: "Kategorie"
         finance_price: "Odhadovaná cena"
+
+        phase_item_header: "Fáze projektu"
+        phase_name: "Název fáze"
+        phase_description: "Popis fáze"
+
+        phase_item_add: "Přidat další"
+        phase_item_remove: "Odstranit"
+
+        output_item_header: "Výstupy projektu"
+        output_name: "Název výstupu"
+        output_type: "Typ výstupu"
+        output_description: "Popis výstupu"
+
+        output_item_add: "Přidat další"
+        output_item_remove: "Odstranit"
 
 signup:
     title: "Registrace"

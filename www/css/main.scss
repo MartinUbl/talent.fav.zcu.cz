@@ -347,3 +347,36 @@ div.menu {
     padding-top: 0.5em;
     border-bottom: 2px solid $accent-color;
 }
+
+.gtl-nav {
+    border: 2px solid $accent-color;
+    border-left: none;
+    padding: 0.2em;
+    text-align: center;
+
+    &:first-child {
+        border-top-left-radius: 1em;
+        border-bottom-left-radius: 1em;
+    }
+    &:last-child {
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+    }
+
+    &.active {
+        background-color: $accent-color;
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    a {
+        color: $hover-color;
+        text-decoration: none;
+
+        width: 100%;
+        display: block;
+    }
+}

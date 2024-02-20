@@ -5,6 +5,8 @@
 
         <h2>{_main.grabthelab.edit_project}</h2>
 
+        {control gtlProposalNav $step}
+
         {if $step == 1}
 
         <h3>{_main.grabthelab.edit_project_step_1}</h3>
@@ -162,13 +164,107 @@
 
         <h3>{_main.grabthelab.edit_project_step_4}</h3>
 
-        <p>{_main.grabthelab.edit_project_step_4_desc}</p>
+        <p>{_main.grabthelab.edit_project_step_4_desc|noescape}</p>
+
+        {form editProject4Form}
+
+            <h5>{_main.grabthelab.form.phase_item_header|noescape}</h5>
+
+            <div class="row">
+                <div class="col-4">
+                    <label class="form-label">{_main.grabthelab.form.phase_name}</label>
+                </div>
+                <div class="col-6">
+                    <label class="form-label">{_main.grabthelab.form.phase_description}</label>
+                </div>
+            </div>
+
+            <div n:multiplier="phase_items">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="mb-3 form-parent">
+                            {input name class=>"form-control"}
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3 form-parent">
+                            {input description class=>"form-control"}
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        {multiplier:remove class: "btn btn-warning w-100"}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    {multiplier:add phase_items class: "btn btn-warning"}
+                </div>
+            </div>
+
+            <div class="mb-3 mt-5 d-grid">
+                {input save class=>'btn btn-outline-warning mb-3'}
+                {input submit class=>'btn btn-warning'}
+            </div>
+        {/form}
 
         {elseif $step == 5}
 
         <h3>{_main.grabthelab.edit_project_step_5}</h3>
 
-        <p>{_main.grabthelab.edit_project_step_5_desc}</p>
+        <p>{_main.grabthelab.edit_project_step_5_desc|noescape}</p>
+
+        {form editProject5Form}
+
+            <h5>{_main.grabthelab.form.output_item_header|noescape}</h5>
+
+            <div class="row">
+                <div class="col-3">
+                    <label class="form-label">{_main.grabthelab.form.output_name}</label>
+                </div>
+                <div class="col-3">
+                    <label class="form-label">{_main.grabthelab.form.output_type}</label>
+                </div>
+                <div class="col-4">
+                    <label class="form-label">{_main.grabthelab.form.output_description}</label>
+                </div>
+            </div>
+
+            <div n:multiplier="output_items">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="mb-3 form-parent">
+                            {input name class=>"form-control"}
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3 form-parent">
+                            {input type class=>"form-select"}
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="mb-3 form-parent">
+                            {input description class=>"form-control"}
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        {multiplier:remove class: "btn btn-warning w-100"}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    {multiplier:add output_items class: "btn btn-warning"}
+                </div>
+            </div>
+
+            <div class="mb-3 mt-5 d-grid">
+                {input save class=>'btn btn-outline-warning mb-3'}
+                {input submit class=>'btn btn-warning'}
+            </div>
+        {/form}
 
         {/if}
 

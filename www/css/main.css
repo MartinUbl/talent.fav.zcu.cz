@@ -303,4 +303,32 @@ div.menu span {
   border-bottom: 2px solid #e0b100;
 }
 
+.gtl-nav {
+  border: 2px solid #e0b100;
+  border-left: none;
+  padding: 0.2em;
+  text-align: center;
+}
+.gtl-nav:first-child {
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+.gtl-nav:last-child {
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+.gtl-nav.active {
+  background-color: #e0b100;
+}
+.gtl-nav.active a {
+  color: white;
+  text-decoration: none;
+}
+.gtl-nav a {
+  color: #757575;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+}
+
 /*# sourceMappingURL=main.css.map */

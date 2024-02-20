@@ -44,8 +44,35 @@ final class GrabTheLabPresenter extends BasePresenter
         $this->template->step = $step;
     }
 
+    public function actionProposalComplete() {
+        if (!$this->getUser()->isLoggedIn()) {
+            $this->flashMessage($this->translator->translate('main.generic.not_signed_in'), 'error');
+            $this->redirect('Sign:in');
+        }
+
+        $cur = $this->grabthelab->getProjectDraft($this->getUser()->id);
+        if (!$cur) {
+            $this->flashMessage($this->translator->translate('main.generic.no_proposal_active'), 'error');
+            $this->redirect('GrabTheLab:proposalCreate');
+        }
+
+        $proposalData = json_decode($cur->data, true);
+
+        $this->template->proposal = $cur;
+        $this->template->proposalData = $proposalData;
+
+        $validateResult = $this->validateProjectFields($proposalData);
+
+        $this->template->missing = $validateResult;
+        $this->template->isReady = empty($validateResult);
+    }
+
     public function createComponentGtlRoundComponent() {
         return new \App\Components\GtlRoundComponent();
+    }
+
+    public function createComponentGtlProposalNav() {
+        return new \App\Components\GtlProposalNav();
     }
 
     public function createComponentNewProjectForm() {
@@ -61,6 +88,38 @@ final class GrabTheLabPresenter extends BasePresenter
         $form->onSuccess[] = [$this, 'newProjectFormSuccess'];
 
         return $form;
+    }
+
+    protected function validateProjectFields($data) : array {
+
+        $mandatoryFields = [
+            'project_name' => 1,
+            'scope' => 1, 
+            'motivation' => 1, 
+            'methods' => 1, 
+            'anotation' => 1, 
+            'length' => 1, 
+            'contact_person_name' => 1, 
+            'contact_person_email' => 1, 
+            'member_name_0' => 2, 
+            'member_name_1' => 2, 
+            'finance_items' => 3, 
+            'phases' => 4, 
+            'outputs' => 5
+        ];
+
+        $missing = [];
+
+        foreach ($mandatoryFields as $mf => $step) {
+            if (!isset($data[$mf]) || empty($data[$mf])) {
+                $missing[$mf] = [
+                    'message' => $this->translator->translate('main.grabthelab.missing.'.$mf),
+                    'step' => $step
+                ];
+            }
+        }
+
+        return $missing;
     }
 
     public function newProjectFormSuccess(Form $form) {
@@ -300,5 +359,136 @@ final class GrabTheLabPresenter extends BasePresenter
             $this->redirect('this');
         else
             $this->redirect('GrabTheLab:proposalEdit', ['step' => 4]);
+    }
+
+    public function createComponentEditProject4Form() {
+        $form = new Form();
+
+        $proj = json_decode($this->grabthelab->getProjectDraft($this->getUser()->id)->data, true);
+        $guard = function($fld, $default = "") use ($proj) {
+            if (isset($proj[$fld])) {
+                return $proj[$fld];
+            }
+            return $default;
+        };
+
+        $mlItems = $guard('phases', null);
+
+        $multiplier = $form->addMultiplier('phase_items', function (\Nette\Forms\Container $container, Form $form) {
+            $container->addText('name', $this->translator->translate('main.grabthelab.form.phase_name'));
+            $container->addText('description', $this->translator->translate('main.grabthelab.form.phase_description'));
+        }, 1, 6);
+
+        if ($mlItems) {
+            $multiplier->setValues($mlItems);
+        }
+
+        $multiplier->addCreateButton($this->translator->translate('main.grabthelab.form.phase_item_add'));
+        $multiplier->addRemoveButton($this->translator->translate('main.grabthelab.form.phase_item_remove'));
+
+        $form->addSubmit('save', $this->translator->translate('main.grabthelab.form.save'));
+        $form->addSubmit('submit', $this->translator->translate('main.grabthelab.form.continue'));
+
+        $form->onSuccess[] = [$this, 'editProject4FormSuccess'];
+
+        return $form;
+    }
+
+    public function editProject4FormSuccess(Form $form) {
+
+        $subAction = $form->isSubmitted() ? $form->isSubmitted()->name : 'submit';
+
+        $vals = $form->values;
+
+        $existing = $this->getUser()->isLoggedIn() ? $this->grabthelab->getProjectDraft($this->getUser()->id) : null;
+        if (!$existing) {
+            $this->redirect('GrabTheLab:');
+        }
+
+        $data = json_decode($existing->data, true);
+
+        $phases = [];
+        foreach ($vals->phase_items as $ph) {
+            $phases[] = [
+                'name' => $ph->name,
+                'description' => $ph->description,
+            ];
+        }
+
+        $data['phases'] = $phases;
+
+        $this->grabthelab->updateProject($this->getUser()->id, $data);
+
+        if ($subAction === 'save')
+            $this->redirect('this');
+        else
+            $this->redirect('GrabTheLab:proposalEdit', ['step' => 5]);
+    }
+
+    public function createComponentEditProject5Form() {
+        $form = new Form();
+
+        $proj = json_decode($this->grabthelab->getProjectDraft($this->getUser()->id)->data, true);
+        $guard = function($fld, $default = "") use ($proj) {
+            if (isset($proj[$fld])) {
+                return $proj[$fld];
+            }
+            return $default;
+        };
+
+        $mlItems = $guard('outputs', null);
+
+        $multiplier = $form->addMultiplier('output_items', function (\Nette\Forms\Container $container, Form $form) {
+            $container->addText('name', $this->translator->translate('main.grabthelab.form.output_name'));
+            $container->addSelect('type', $this->translator->translate('main.grabthelab.form.output_type'),
+                \App\Model\Enum\OutputType::getTranslatedEnum(function($str) { return $this->translator->translate($str); }));
+            $container->addText('description', $this->translator->translate('main.grabthelab.form.output_description'));
+        }, 1, 10);
+
+        if ($mlItems) {
+            $multiplier->setValues($mlItems);
+        }
+
+        $multiplier->addCreateButton($this->translator->translate('main.grabthelab.form.output_item_add'));
+        $multiplier->addRemoveButton($this->translator->translate('main.grabthelab.form.output_item_remove'));
+
+        $form->addSubmit('save', $this->translator->translate('main.grabthelab.form.save'));
+        $form->addSubmit('submit', $this->translator->translate('main.grabthelab.form.continue'));
+
+        $form->onSuccess[] = [$this, 'editProject5FormSuccess'];
+
+        return $form;
+    }
+
+    public function editProject5FormSuccess(Form $form) {
+
+        $subAction = $form->isSubmitted() ? $form->isSubmitted()->name : 'submit';
+
+        $vals = $form->values;
+
+        $existing = $this->getUser()->isLoggedIn() ? $this->grabthelab->getProjectDraft($this->getUser()->id) : null;
+        if (!$existing) {
+            $this->redirect('GrabTheLab:');
+        }
+
+        $data = json_decode($existing->data, true);
+
+        $outputs = [];
+        foreach ($vals->output_items as $op) {
+            $outputs[] = [
+                'name' => $op->name,
+                'type' => $op->type,
+                'description' => $op->description,
+            ];
+        }
+
+        $data['outputs'] = $outputs;
+
+        $this->grabthelab->updateProject($this->getUser()->id, $data);
+
+        if ($subAction === 'save')
+            $this->redirect('this');
+        else
+            $this->redirect('GrabTheLab:proposalComplete');
     }
 }

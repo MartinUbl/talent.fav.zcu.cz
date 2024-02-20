@@ -1,0 +1,34 @@
+{block content}
+
+<div class="row">
+    <div class="col-12">
+
+        <h2>{_main.grabthelab.project_complete}</h2>
+
+        {control gtlProposalNav 6}
+
+        {if $isReady}
+
+        <p>{_main.grabthelab.project_complete_info, ['project_name' => $proposalData['project_name']] |noescape}</p>
+
+        <ul>
+            <li><a n:href="GrabTheLab:proposalEdit step => 1" class="text-secondary">{_main.grabthelab.backlink_long_1}</a> - {_main.grabthelab.backlink_long_1_comment}</li>
+            <li><a n:href="GrabTheLab:proposalEdit step => 2" class="text-secondary">{_main.grabthelab.backlink_long_2}</a> - {_main.grabthelab.backlink_long_2_comment}</li>
+            <li><a n:href="GrabTheLab:proposalEdit step => 3" class="text-secondary">{_main.grabthelab.backlink_long_3}</a> - {_main.grabthelab.backlink_long_3_comment}</li>
+            <li><a n:href="GrabTheLab:proposalEdit step => 4" class="text-secondary">{_main.grabthelab.backlink_long_4}</a> - {_main.grabthelab.backlink_long_4_comment}</li>
+            <li><a n:href="GrabTheLab:proposalEdit step => 5" class="text-secondary">{_main.grabthelab.backlink_long_5}</a> - {_main.grabthelab.backlink_long_5_comment}</li>
+        </ul>
+
+        {else}
+
+        <p>{_main.grabthelab.missing_notice, ['project_name' => $proposalData['project_name']] |noescape}</p>
+        <ul>
+            {foreach $missing as $key => $mf}
+                <li>{$mf['message']} <a n:href="GrabTheLab:proposalEdit step => $mf['step']" class="text-warning"><i class="fa-solid fa-pen-to-square"></i></a></li>
+            {/foreach}
+        </ul>
+
+        {/if}
+
+    </div>
+</div>
