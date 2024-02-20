@@ -76,19 +76,19 @@
                         <h4>{_main.grabthelab.form.team_member} {$i + 1} ({_main.grabthelab.form.team_member_optional})</h4>
                         {/if}
             <div class="row">
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="mb-3 form-parent">
                         {label "member_name_$i" class=>'form-label smaller' /}
                         {input "member_name_$i" class=>'form-control'}
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="mb-3 form-parent">
                         {label "member_school_$i" class=>'form-label smaller' /}
                         {input "member_school_$i" class=>'form-control'}
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="mb-3 form-parent">
                         {label "member_class_$i" class=>'form-label smaller' /}
                         {input "member_class_$i" class=>'form-control'}
@@ -113,36 +113,39 @@
 
             <h5>{_main.grabthelab.form.fin_item_header}</h5>
 
-            <div class="row">
-                <div class="col-4">
+            <div class="row d-none d-lg-flex">
+                <div class="col-12 col-lg-4">
                     <label class="form-label">{_main.grabthelab.form.finance_name}</label>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-lg-3">
                     <label class="form-label">{_main.grabthelab.form.finance_category}</label>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-lg-3">
                     <label class="form-label">{_main.grabthelab.form.finance_price}</label>
                 </div>
             </div>
 
             <div n:multiplier="finance_items">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-12 col-lg-4">
                         <div class="mb-3 form-parent">
+                            <label class="form-label smaller d-block d-lg-none">{_main.grabthelab.form.finance_name}</label>
                             {input name class=>"form-control"}
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-lg-3">
                         <div class="mb-3 form-parent">
+                            <label class="form-label smaller d-block d-lg-none">{_main.grabthelab.form.finance_category}</label>
                             {input category class=>"form-select"}
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-lg-3">
                         <div class="mb-3 form-parent">
+                            <label class="form-label smaller d-block d-lg-none">{_main.grabthelab.form.finance_price}</label>
                             {input price class=>"form-control"}
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-12 col-lg-2 mb-5 mb-lg-0">
                         {multiplier:remove class: "btn btn-warning w-100"}
                     </div>
                 </div>
@@ -170,7 +173,7 @@
 
             <h5>{_main.grabthelab.form.phase_item_header|noescape}</h5>
 
-            <div class="row">
+            <div class="row d-none d-lg-flex">
                 <div class="col-4">
                     <label class="form-label">{_main.grabthelab.form.phase_name}</label>
                 </div>
@@ -181,17 +184,19 @@
 
             <div n:multiplier="phase_items">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-12 col-lg-4">
                         <div class="mb-3 form-parent">
+                            <label class="form-label smaller d-block d-lg-none">{_main.grabthelab.form.phase_name}</label>
                             {input name class=>"form-control"}
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6">
                         <div class="mb-3 form-parent">
+                            <label class="form-label smaller d-block d-lg-none">{_main.grabthelab.form.phase_description}</label>
                             {input description class=>"form-control"}
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-12 col-lg-2 mb-5 mb-lg-0">
                         {multiplier:remove class: "btn btn-warning w-100"}
                     </div>
                 </div>
@@ -219,36 +224,39 @@
 
             <h5>{_main.grabthelab.form.output_item_header|noescape}</h5>
 
-            <div class="row">
-                <div class="col-3">
+            <div class="row d-none d-lg-flex">
+                <div class="col-12 col-lg-3">
                     <label class="form-label">{_main.grabthelab.form.output_name}</label>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-lg-3">
                     <label class="form-label">{_main.grabthelab.form.output_type}</label>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-lg-4">
                     <label class="form-label">{_main.grabthelab.form.output_description}</label>
                 </div>
             </div>
 
             <div n:multiplier="output_items">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-12 col-lg-3">
                         <div class="mb-3 form-parent">
+                            <label class="form-label smaller d-block d-lg-none">{_main.grabthelab.form.output_name}</label>
                             {input name class=>"form-control"}
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-lg-3">
                         <div class="mb-3 form-parent">
+                            <label class="form-label smaller d-block d-lg-none">{_main.grabthelab.form.output_type}</label>
                             {input type class=>"form-select"}
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-lg-4">
                         <div class="mb-3 form-parent">
+                            <label class="form-label smaller d-block d-lg-none">{_main.grabthelab.form.output_description}</label>
                             {input description class=>"form-control"}
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-12 col-lg-2 mb-5 mb-lg-0">
                         {multiplier:remove class: "btn btn-warning w-100"}
                     </div>
                 </div>

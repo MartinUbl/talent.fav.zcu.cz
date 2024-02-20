@@ -51,6 +51,10 @@ body {
 .topimg {
   height: 1em;
 }
+.topimg.larger {
+  height: 1.8em;
+  margin: 0.4em;
+}
 
 .footer {
   padding: 1em 0;
@@ -76,19 +80,45 @@ body {
   width: 1em;
   height: 1em;
 }
+.lang-selector.mobile {
+  right: auto;
+  top: 0.5em;
+  left: 1em;
+}
+.lang-selector.mobile img {
+  width: 1.5em;
+  height: 1.5em;
+}
 
 h1 {
   display: inline-block;
   font-family: "Roboto Condensed";
   color: #e0b100;
   text-transform: uppercase;
-  font-size: 2.8em;
+  font-size: 1.4em;
+}
+@media (min-width: 576px) {
+  h1 {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2.8em;
+  }
 }
 
 h2, h3, h4, h5 {
   font-family: "Roboto Condensed";
   color: #173868;
   text-transform: uppercase;
+}
+
+.navbar-toggler {
+  padding: 0.2em 0.35em;
+  margin: 0.3em;
+  color: white;
+  border: 1px solid white;
 }
 
 div.menu {
@@ -325,11 +355,22 @@ div.menu span {
   font-size: 0.8em;
 }
 
+.gtl-nav-parent {
+  border-collapse: collapse;
+}
+
 .gtl-nav {
   border: 2px solid #e0b100;
-  border-left: none;
   padding: 0.2em;
   text-align: center;
+}
+.gtl-nav.gtl-nav-even {
+  border-left: none;
+}
+@media (min-width: 768px) {
+  .gtl-nav {
+    border-left: none;
+  }
 }
 .gtl-nav:first-child {
   border-top-left-radius: 1em;

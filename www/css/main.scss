@@ -65,6 +65,11 @@ body {
 
 .topimg {
     height: 1em;
+
+    &.larger {
+        height: 1.8em;
+        margin: 0.4em;
+    }
 }
 
 .footer {
@@ -91,6 +96,37 @@ body {
         width: 1em;
         height: 1em;
     }
+
+    &.mobile {
+        right: auto;
+        top: 0.5em;
+        left: 1em;
+
+        img {
+            width: 1.5em;
+            height: 1.5em;
+        }
+    }
+}
+
+@mixin br-sm {
+    @media (min-width: 576px) { @content }
+}
+
+@mixin br-md {
+    @media (min-width: 768px) { @content }
+}
+
+@mixin br-lg {
+    @media (min-width: 992px) { @content }
+}
+
+@mixin br-xl {
+    @media (min-width: 1200px) { @content }
+}
+
+@mixin br-xxl {
+    @media (min-width: 1400px) { @content }
 }
 
 h1 {
@@ -98,13 +134,28 @@ h1 {
     font-family: 'Roboto Condensed';
     color: $accent-color;
     text-transform: uppercase;
-    font-size: 2.8em;
+    font-size: 1.4em;
+
+    @include br-sm {
+        font-size: 1.5em;
+    }
+
+    @include br-xl {
+        font-size: 2.8em;
+    }
 }
 
 h2, h3, h4, h5 {
     font-family: 'Roboto Condensed';
     color: $text-color;
     text-transform: uppercase;
+}
+
+.navbar-toggler {
+    padding: 0.2em 0.35em;
+    margin: 0.3em;
+    color: white;
+    border: 1px solid white;
 }
 
 div.menu {
@@ -371,11 +422,22 @@ div.menu {
     }
 }
 
+.gtl-nav-parent {
+    border-collapse: collapse;
+}
+
 .gtl-nav {
     border: 2px solid $accent-color;
-    border-left: none;
     padding: 0.2em;
     text-align: center;
+
+    &.gtl-nav-even {
+        border-left: none;
+    }
+
+    @include br-md {
+        border-left: none;
+    }
 
     &:first-child {
         border-top-left-radius: 1em;

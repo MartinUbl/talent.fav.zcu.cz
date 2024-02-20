@@ -30,8 +30,9 @@
         <div class="container">
             <div class="row">
                  <div class="col-12 p-3 hdr">
-                     <h1><img src="{$baseUrl}/img/logo.svg" alt="Logo FAV" class="topimg" /> {_main.title}</h1>
-                     <div class="lang-selector">
+                     <h1 class="d-none d-md-block"><img src="{$baseUrl}/img/logo.svg" alt="Logo FAV" class="topimg" /> {_main.title}</h1>
+                     <h1 class="d-block d-md-none text-center"><img src="{$baseUrl}/img/logo.svg" alt="Logo FAV" class="topimg larger" /><br /> {_main.title}</h1>
+                     <div class="lang-selector d-none d-md-block">
                         <a n:href="changeLocale! lang=>cs"><img src="{$baseUrl}/img/cs.svg" title="Čeština" alt="Čeština" /></a>
                         <a n:href="changeLocale! lang=>en"><img src="{$baseUrl}/img/en.svg" title="English" alt="English" /></a>
                      </div>
@@ -40,30 +41,46 @@
         </div>
     </div>
     <div class="container-fluid yellow p-0">
-        <div class="container p-0">
-            <div class="row p-0">
-                <div class="col-12 p-0">
-                    <div class="menu">
-                        <a n:href="Home:"><div class="left">{_main.menu.homepage}</div></a>
-                        <a n:href="GrabTheLab:"><div class="left">{_main.menu.grabthelab}</div></a>
-                        <a n:href="Scholarship:"><div class="left">{_main.menu.stipendium}</div></a>
-                        <a n:href="TalentAmbassador:"><div class="left">{_main.menu.talentambassador}</div></a>
-                        
+        <nav class="navbar navbar-expand-lg p-0">
+            <div class="container justify-content-end">
+                <div class="lang-selector d-block d-md-none mobile">
+                    <a n:href="changeLocale! lang=>cs"><img src="{$baseUrl}/img/cs.svg" title="Čeština" alt="Čeština" /></a>
+                    <a n:href="changeLocale! lang=>en"><img src="{$baseUrl}/img/en.svg" title="English" alt="English" /></a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTalent" aria-controls="navbarTalent" aria-expanded="false" aria-label="Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse menu" id="navbarTalent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a n:href="Home:"><div class="left">{_main.menu.homepage}</div></a>
+                        </li>
+                        <li class="nav-item">
+                            <a n:href="GrabTheLab:"><div class="left">{_main.menu.grabthelab}</div></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a n:href="Scholarship:"><div class="left">{_main.menu.stipendium}</div></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a n:href="TalentAmbassador:"><div class="left">{_main.menu.talentambassador}</div></a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex">
                         {if $user->isLoggedIn()}
-                        <a n:href="logout!" title="{_main.menu.logout}"><div class="right"><i class="fa-solid fa-right-from-bracket"></i></div></a>
-
-                        <a href="#"><div class="right"><i class="fa-solid fa-gear"></i></div></a>
-
-                        <span><div class="right">{_main.menu.userloggedas} {$user->getIdentity()->email}</div></span>
+                            <span><div class="right">{$user->getIdentity()->email}</div></span>
+                            <a href="#"><div class="right"><i class="fa-solid fa-gear"></i></div></a>
+                            <a n:href="logout!" title="{_main.menu.logout}"><div class="right"><i class="fa-solid fa-right-from-bracket"></i></div></a>
                         {else}
-                        <a n:href="Sign:in"><div class="right">{_main.menu.signin}</div></a>
-                        <a n:href="Sign:up"><div class="right">{_main.menu.signup}</div></a>
+                            <a n:href="Sign:in"><div class="right">{_main.menu.signin}</div></a>
+                            <a n:href="Sign:up"><div class="right">{_main.menu.signup}</div></a>
                         {/if}
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </div>
+
     <div class="container-fluid grey">
         <div class="container">
             <div class="row">

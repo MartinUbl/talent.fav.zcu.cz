@@ -3,13 +3,13 @@
     <div class="col-12 mb-3">
         <div class="gtl-round">
             <div class="row">
-                <div class="col-1">
-                    <img src="{$baseUrl}/img/grabthelab.jpg" style="width: 100%; height: auto;" />
+                <div class="col-sm-12 col-lg-1">
+                    <img src="{$baseUrl}/img/grabthelab.jpg" style="width: 100%; height: auto;" class="p-2 p-md-0" />
                 </div>
-                <div class="col-9">
+                <div class="col-12 col-md-9">
                     <div class="row">
                         <div class="col-12">
-                            <h4>
+                            <h4 class="text-center text-md-start">
                             {if $round->proposal_start > new \DateTime()}
                             {_main.grabthelab.state_upcoming}
                             {elseif $round->proposal_end > new \DateTime()}
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-2 d-flex align-items-center">
+                <div class="col-12 col-md-2 d-flex align-items-center pt-3 pt-md-0">
                     {if $round->proposal_start < new \DateTime() && $round->proposal_end > new \DateTime()}
                         {if $hasDraft}
                             <a href="{plink GrabTheLab:proposalEdit}" class="btn btn-warning" style="width: 100%; padding: 0.5em 0.3em; text-align: center;">{_main.grabthelab.edit_draft}</a>
