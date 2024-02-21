@@ -227,7 +227,7 @@ final class GrabTheLabPresenter extends BasePresenter
         $data['contact_person_name'] = $vals->contact_person_name;
         $data['contact_person_email'] = $vals->contact_person_email;
 
-        $this->grabthelab->updateProject($this->getUser()->id, $data);
+        $this->grabthelab->updateProject($existing->id, $data);
 
         if ($subAction === 'save')
             $this->redirect('this');
@@ -302,7 +302,7 @@ final class GrabTheLabPresenter extends BasePresenter
             }
         }
 
-        $this->grabthelab->updateProject($this->getUser()->id, $data);
+        $this->grabthelab->updateProject($existing->id, $data);
 
         if ($subAction === 'save')
             $this->redirect('this');
@@ -371,7 +371,7 @@ final class GrabTheLabPresenter extends BasePresenter
 
         $data['finance_items'] = $finItems;
 
-        $this->grabthelab->updateProject($this->getUser()->id, $data);
+        $this->grabthelab->updateProject($existing->id, $data);
 
         if ($subAction === 'save')
             $this->redirect('this');
@@ -435,7 +435,7 @@ final class GrabTheLabPresenter extends BasePresenter
 
         $data['phases'] = $phases;
 
-        $this->grabthelab->updateProject($this->getUser()->id, $data);
+        $this->grabthelab->updateProject($existing->id, $data);
 
         if ($subAction === 'save')
             $this->redirect('this');
@@ -502,7 +502,7 @@ final class GrabTheLabPresenter extends BasePresenter
 
         $data['outputs'] = $outputs;
 
-        $this->grabthelab->updateProject($this->getUser()->id, $data);
+        $this->grabthelab->updateProject($existing->id, $data);
 
         if ($subAction === 'save')
             $this->redirect('this');
