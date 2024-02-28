@@ -7,6 +7,7 @@ class FinanceCategory {
     const COURSES = 'courses';
     const MINOR_TANGIBLE = 'minor_tangible';
     const LICENCES = 'licences';
+    const FOOD = 'food';
     const OTHERS = 'others';
 
     public static function getEnum() {
@@ -15,6 +16,7 @@ class FinanceCategory {
             self::COURSES,
             self::MINOR_TANGIBLE,
             self::LICENCES,
+            self::FOOD,
             self::OTHERS
         ];
     }
