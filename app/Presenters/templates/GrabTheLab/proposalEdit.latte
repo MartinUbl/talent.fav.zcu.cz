@@ -142,7 +142,7 @@
                     <div class="col-12 col-lg-3">
                         <div class="mb-3 form-parent">
                             <label class="form-label smaller d-block d-lg-none">{_main.grabthelab.form.finance_price}</label>
-                            {input price class=>"form-control"}
+                            {input price class=>"form-control finance-price"}
                         </div>
                     </div>
                     <div class="col-12 col-lg-2 mb-5 mb-lg-0">
@@ -157,11 +157,38 @@
                 </div>
             </div>
 
+            <div class="mb-3 mt-5 finance_total_parent">
+                {_main.grabthelab.finance_total}: <span class="finance_sum_field"><span id="finance_total">0</span> Kč</span>
+            </div>
+
             <div class="mb-3 mt-5 d-grid">
                 {input save class=>'btn btn-outline-warning mb-3'}
                 {input submit class=>'btn btn-warning'}
             </div>
         {/form}
+
+        <script>
+            function sumFinances() {
+                var total = 0;
+                $.each($('.finance-price'), function(i,e) {
+                    try {
+                        var price = parseInt($(e).val());
+                        if (price > 0) {
+                            total += price;
+                        }
+                    }
+                    catch (ex) {
+                        //
+                    }
+                });
+
+                $('#finance_total').html(total);
+            }
+
+            $('.finance-price').change(sumFinances);
+            $('.finance-price').keyup(sumFinances);
+            $(document).ready(sumFinances);
+        </script>
 
         {elseif $step == 4}
 

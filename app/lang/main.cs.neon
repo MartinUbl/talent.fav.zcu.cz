@@ -119,6 +119,8 @@ grabthelab:
     backlink_long_5_comment: "jsou uvedeny všechny plánované výstupy?"
     backlink_complete: "Shrnutí"
 
+    finance_total: "Celková požadovaná finanční částka"
+
     export_pdf: "Exportovat PDF"
     propose_project: "Odeslat projekt!"
 
