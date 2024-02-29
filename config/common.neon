@@ -1,7 +1,4 @@
 parameters:
-    googleauth:
-        client_id: 464673265455-ro11ulv6vvje3qivtju07q49b35g8bc7.apps.googleusercontent.com
-        client_secret: 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
 
 application:
     errorPresenter: Error
