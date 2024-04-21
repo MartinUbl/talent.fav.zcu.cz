@@ -35,10 +35,15 @@ class UserModel extends BaseModel {
             return false;
         }
 
+        $role = 'user';
+        if (strtolower($email) === 'ublm@gapps.zcu.cz') {
+            $role = 'admin';
+        }
+
         $this->getTable()->insert([
             'fullname' => $name,
             'email' => $email,
-            'role' => 'user',
+            'role' => $role,
             'password' => $this->passwords->hash($password)
         ]);
 
@@ -51,10 +56,15 @@ class UserModel extends BaseModel {
             return false;
         }
 
+        $role = 'user';
+        if (strtolower($email) === 'ublm@gapps.zcu.cz') {
+            $role = 'admin';
+        }
+
         $this->getTable()->insert([
             'fullname' => $name,
             'email'=> $email,
-            'role' => 'user',
+            'role' => $role,
             'google_id'=> $googleId
         ]);
 

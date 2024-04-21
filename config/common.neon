@@ -30,3 +30,6 @@ translation:
     localeResolvers:
         - Contributte\Translation\LocalesResolvers\Session
         - Contributte\Translation\LocalesResolvers\Header
+
+http:
+    proxy: 0.0.0.0/0
