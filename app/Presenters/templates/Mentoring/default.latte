@@ -1,0 +1,22 @@
+
+{block content}
+
+<div class="row">
+    <div class="col-12">
+
+        <h2>{_main.mentoring.title}</h2>
+
+        <p>{_main.mentoring.par1|noescape}</p>
+        <p>{_main.mentoring.par2|noescape}</p>
+        <p>{_main.mentoring.par3|noescape}</p>
+
+        <h3>{_main.mentoring.list}</h3>
+
+        {control displayBlockComponent 'mentored/lasar.jpg', 'main.mentoring.lasar_title', 'main.mentoring.lasar_text', 'info.zcu', 'https://info.zcu.cz/S-projektem-opravy-satelitu-laserem-pomahaji-stredoskolskemu-tymu-i-vedci-ze-ZCU/clanek.jsp?id=6427', 'doc. Ing. Jiří Masopust, Ph.D.'}
+        {control displayBlockComponent 'mentored/astrox.jpg', 'main.mentoring.astrox_title', 'main.mentoring.astrox_text', 'info.zcu', 'https://info.zcu.cz/clanek.jsp?id=5169'}
+        {control displayBlockComponent 'mentored/bohacek.jpg', 'main.mentoring.bohacek_title', 'main.mentoring.bohacek_text', 'info.zcu', 'https://info.zcu.cz/clanek.jsp?id=5521', 'Ing. Marek Hrúz, Ph.D.'}
+
+        {control displayBlockComponent 'mentored/studenti.jpg', 'main.mentoring.ambas_title', 'main.mentoring.ambas_text'}
+
+    </div>
+</div>

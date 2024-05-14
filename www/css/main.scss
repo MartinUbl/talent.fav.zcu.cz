@@ -180,7 +180,7 @@ div.menu {
         line-height: 2em;
         font-weight: 600;
         text-align: center;
-        div {
+        div, a {
             padding: 0.4em 2em 0.4em 2em;
         }
     }
@@ -209,6 +209,50 @@ div.menu {
         margin-left: 0;
         margin: 0;
     }
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.dropdown-toggle div::after {
+    display: inline-block;
+    margin-left: .655em;
+    vertical-align: .155em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+.dropdown-menu {
+    background: $accent-color;
+    border: none;
+    border-radius: 0;
+}
+
+.dropdown:hover .dropdown-menu { 
+    display: block;
+    top: 100%;
+} 
+
+.dropdown-item {
+    float: left;
+    width: auto;
+    padding: 0.4em 2em 0.4em 2em;
+}
+
+.dropdown-item::before {
+    display: inline-block;
+    margin-left: .455em;
+    margin-right: .3em;
+    vertical-align: .125em;
+    content: "";
+    border-top: .3em solid transparent;
+    border-right: 0;
+    border-bottom: .3em solid transparent;
+    border-left: .3em solid;
 }
 
 .content-block {
@@ -312,6 +356,27 @@ div.menu {
 
     &.talentambassador {
         background: url('../img/talentambassador.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    &.wesupport {
+        background: url('../img/zvazvedu.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    &.mentoring {
+        background: url('../img/mentoring.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    &.success {
+        background: url('../img/success.jpg');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;

@@ -10,9 +10,14 @@ generic:
     preparing: "Výzva se připravuje!"
 
 menu:
-    homepage: "Domovská stránka"
+    homepage: "Domů"
+    calls: "Výzvy"
     grabthelab: "Grab the Lab"
     stipendium: "Stipendium děkana"
+    supports: "Podporujeme"
+    supp_events: "Studentské akce"
+    supp_mentoring: "Mentoring"
+    gallery: "Galerie úspěchů"
     talentambassador: "Talent ambassador"
     signin: "Přihlásit se"
     signup: "Registrovat se"
@@ -30,6 +35,12 @@ home:
     scholarship_subtitle: "Potřebuješ finanční podporu pro svůj rozvoj?"
     talentambassador_title: "Talent ambassador"
     talentambassador_subtitle: "Chceš víc, než ti střední škola může poskytnout?"
+    wesupport_title: "Studentské akce"
+    wesupport_subtitle: "Podporujeme akce středoškoláků"
+    mentoring_title: "Mentoring"
+    mentoring_subtitle: "Experti v oboru jsou ti k dispozici"
+    success_gallery_title: "Podpořili jsme"
+    success_gallery_subtitle: "Koukni, co všechno už jsme podpořili"
 
 scope:
     physics: "Fyzika"
@@ -282,3 +293,35 @@ signin:
     invalid_credentials: "Neplatné přihlašovací údaje!"
     unknown_error: "Nastala neznámá chyba. Opakujte prosím pokus později."
     success: "Byl/a jste úspěšně přihlášen/a!"
+
+events:
+    title: "Podporujeme studentské akce"
+    par1: "V minulosti jsme podpořili již několik studentských akcí. Baví nás pracovat s mladými lidmi plnými nápadů a energie, a proto jsme se rozhodli podporovat studentské akce i nadále. Níže si můžete prohlédnout některé akce, které jsme již podpořili. Pokud jste organizátorem nějaké takové akce a máme Vám jak pomoci, ozvěte se nám - rádi se domluvíme na další výpomoci."
+
+    zvazvedu_title: "Zvaž vědu!"
+    zvazvedu_text: "<p>Zvaž vědu! je akce organizovaná samotnými středoškoláky, která má za cíl popularizovat vědu a vzbudit nadšení v žácích středních škol. Hlavním cílem je zvednout zájem o účast v soutěžích a olympiádách, akce ale nezapomíná i na představení ostatních příležitostí, kterých se mohou nadaní žáci účastnit.</p><p>V roce 2023 proběhl první ročník této akce a sklidil obrovský úspěch - dorazilo na 300 žáků středních škol ze všech koutů Plzeňského kraje.</p><p>FAVka poskytla prostory pro konání akce s kompletním technickým vybavením.</p>"
+    plnoc_title: "PLNOC"
+    plnoc_text: "<p>S podporou FAVky proběhla i akce zvaná PLNOC - Plzeňská přednášková noc, kde středoškoláci přednáší středoškolákům. Bohatý program byl zaměřen zejména na zájmy samotných studentů, kteří přednášeli svým vrstevníkům o oblasti jejich zájmu.</p><p>FAVka kromě finanční podpory poskytla i doprovodný program ve formě odborných přednášek a workshopů.</p>"
+
+    yourevent_title: "Vaše akce"
+    yourevent_text: "Chcete zorganizovat vaši vlastní akci a potřebujete od FAVky pomoc? Rádi Vám poskytneme, co bude v našich silách. Napište nám na <a href='mailto:talent@fav.zcu.cz'>talent@fav.zcu.cz</a> a domluvíme vše potřebné."
+
+mentoring:
+    title: "Mentoring"
+    par1: "Fakulta aplikovaných věd je plná expertů v rozličných oblastech vědy a výzkumu. Tito odborníci mají kromě obsáhlých znalostí i nenahraditelné zkušenosti, které Vám jsou ochotni poskytnout. Mentoringu středoškoláků se už nějakou dobu věnujeme."
+    par2: "Jak takový mentoring může vypadat? To záleží na každém. Vždy je ale hlavním prvkem právě nějaký odborný mentor, kterého ti pomůže vybrat třeba právě talent ambassador. Chceš za svým mentorem pravidelně chodit na FAVku do laboratoře? Potřebuješ jen trochu poradit se svým projektem, který jinak zvládáš? Chceš svůj projekt pozvednout na vyšší úroveň a schází ti inspirace? Hledáš inspiraci na projekt, jehož výstup má šanci být užitečný? Vše vymyslíme."
+    par3: "Pokud bys chtěl(a) mentora najít, neboj se napsat talent ambassadorovi (<a href='mailto:talent@fav.zcu.cz'>talent@fav.zcu.cz</a>). I když si zrovna nejsi jistý/jistá tím, co právě potřebuješ nebo chceš - jsme tu i od toho, abychom tě pomohli nasměrovat."
+
+    list: "Koho jsme třeba mentorovali?"
+
+    lasar_title: "LASAR"
+    lasar_text: ""
+
+    bohacek_title: "Matyáš Boháček"
+    bohacek_text: ""
+
+    astrox_title: "AstroX"
+    astrox_text: ""
+
+    ambas_title: "A další..."
+    ambas_text: "Talent ambassador už našel mentora desítkám středoškoláků. Budeš mezi nimi i ty?"

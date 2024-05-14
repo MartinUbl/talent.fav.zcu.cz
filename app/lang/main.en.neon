@@ -11,8 +11,13 @@ generic:
 
 menu:
     homepage: "Homepage"
+    calls: "Calls"
     grabthelab: "Grab the Lab"
     stipendium: "Dean's scholarship"
+    supports: "We support"
+    supp_events: "Student events"
+    supp_mentoring: "Mentoring"
+    gallery: "Gallery"
     talentambassador: "Talent ambassador"
     signin: "Sign in"
     signup: "Sign up"
@@ -30,6 +35,12 @@ home:
     scholarship_subtitle: "Do you need finances to support your development?"
     talentambassador_title: "Talent ambassador"
     talentambassador_subtitle: "Do you want more than your school offers?"
+    wesupport_title: "Student events"
+    wesupport_subtitle: "We support student events"
+    mentoring_title: "Mentoring"
+    mentoring_subtitle: "Many experts are here for you"
+    success_gallery_title: "We've supported"
+    success_gallery_subtitle: "Take a look at the gallery"
 
 scope:
     physics: "Physics"

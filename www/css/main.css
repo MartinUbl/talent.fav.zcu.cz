@@ -143,7 +143,7 @@ div.menu a, div.menu span {
   font-weight: 600;
   text-align: center;
 }
-div.menu a div, div.menu span div {
+div.menu a div, div.menu a a, div.menu span div, div.menu span a {
   padding: 0.4em 2em 0.4em 2em;
 }
 div.menu a {
@@ -165,6 +165,50 @@ div.menu span {
   text-decoration: none;
   margin-left: 0;
   margin: 0;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.dropdown-toggle div::after {
+  display: inline-block;
+  margin-left: 0.655em;
+  vertical-align: 0.155em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+.dropdown-menu {
+  background: #e0b100;
+  border: none;
+  border-radius: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  top: 100%;
+}
+
+.dropdown-item {
+  float: left;
+  width: auto;
+  padding: 0.4em 2em 0.4em 2em;
+}
+
+.dropdown-item::before {
+  display: inline-block;
+  margin-left: 0.455em;
+  margin-right: 0.3em;
+  vertical-align: 0.125em;
+  content: "";
+  border-top: 0.3em solid transparent;
+  border-right: 0;
+  border-bottom: 0.3em solid transparent;
+  border-left: 0.3em solid;
 }
 
 .content-block {
@@ -260,6 +304,24 @@ div.menu span {
 }
 .banner.talentambassador {
   background: url("../img/talentambassador.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.banner.wesupport {
+  background: url("../img/zvazvedu.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.banner.mentoring {
+  background: url("../img/mentoring.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.banner.success {
+  background: url("../img/success.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

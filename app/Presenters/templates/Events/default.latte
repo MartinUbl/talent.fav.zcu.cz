@@ -1,0 +1,16 @@
+
+{block content}
+
+<div class="row">
+    <div class="col-12">
+
+        <h2>{_main.events.title}</h2>
+
+        <p>{_main.events.par1}</p>
+
+        {control displayBlockComponent 'events/zvazvedu.jpg', 'main.events.zvazvedu_title', 'main.events.zvazvedu_text', 'zvazvedu.cz', 'https://zvazvedu.cz/'}
+        {control displayBlockComponent 'events/plnoc.jpg', 'main.events.plnoc_title', 'main.events.plnoc_text', 'plnoc.cz', 'https://www.plnoc.cz/'}
+        {control displayBlockComponent 'events/qmark.jpg', 'main.events.yourevent_title', 'main.events.yourevent_text'}
+
+    </div>
+</div>

@@ -56,14 +56,27 @@
                         <li class="nav-item">
                             <a n:href="Home:"><div class="left">{_main.menu.homepage}</div></a>
                         </li>
-                        <li class="nav-item">
-                            <a n:href="GrabTheLab:"><div class="left">{_main.menu.grabthelab}</div></a>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" href="javascript:void(0);" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <div class="left">{_main.menu.calls}</div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" n:href="GrabTheLab:">{_main.menu.grabthelab}</a>
+                                <a class="dropdown-item" n:href="Scholarship:">{_main.menu.stipendium}</a>
+                            </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a n:href="Scholarship:"><div class="left">{_main.menu.stipendium}</div></a>
+                            <a class="dropdown-toggle" href="javascript:void(0);" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <div class="left">{_main.menu.supports}</div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" n:href="Events:">{_main.menu.supp_events}</a>
+                                <a class="dropdown-item" n:href="Mentoring:">{_main.menu.supp_mentoring}</a>
+                                <a class="dropdown-item" n:href="TalentAmbassador:">{_main.menu.talentambassador}</a>
+                            </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a n:href="TalentAmbassador:"><div class="left">{_main.menu.talentambassador}</div></a>
+                            <a n:href="Gallery:"><div class="left">{_main.menu.gallery}</div></a>
                         </li>
                     </ul>
 
@@ -115,5 +128,7 @@
 
     <script src="{$baseUrl}/js/main.js"></script>
     {/block}
+
+    <script src="http://localhost:35729/livereload.js?snipver=1"></script>
 </body>
 </html>
