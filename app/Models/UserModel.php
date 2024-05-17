@@ -71,4 +71,27 @@ class UserModel extends BaseModel {
         return true;
     }
 
+    public function changeUserProfile($id, $fullname) {
+        $this->getTable()->where('id', $id)->update([
+            'fullname' => $fullname
+        ]);
+    }
+
+    public function changeUserPassword($id, $oldPassword, $newPassword) {
+        $user = $this->getUserById($id);
+        if (!$user) {
+            return false;
+        }
+
+        if (!$this->passwords->verify($oldPassword, $user->password)) {
+            return false;
+        }
+        
+        $this->getTable()->where('id', $id)->update([
+            'password' => $this->passwords->hash($newPassword)
+        ]);
+
+        return true;
+    }
+
 };

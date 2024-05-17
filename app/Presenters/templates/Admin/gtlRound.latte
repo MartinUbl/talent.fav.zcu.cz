@@ -3,6 +3,8 @@
 <div class="row">
     <div class="col-12">
 
+        <a n:href="Admin:GtlProposals" class="btn btn-sm btn-danger mb-3"><i class="fa-solid fa-angles-left"></i>&nbsp; Zpět do pohledu správce</a>
+
         <h2>Grab the Lab - Vyhlášení výzvy</h2>
 
         <p>Zde najdete možnost vyhlásit novou výzvu, upravit stávající a prohlížet výzvy minulé.<p>
@@ -36,7 +38,7 @@
         <h3>Aktuálně probíhající výzva</h3>
 
         {if $activeRound}
-        {control gtlRoundComponent $activeRound}
+            {control gtlRoundComponent $activeRound, true}
         {else}
         <p><i>Žádná nastávající výzva</i></p>
         {/if}
@@ -44,6 +46,9 @@
         <h3>Proběhlé výzvy</h3>
 
         {if $pastRounds->count() > 0}
+            {foreach $pastRounds as $pr}
+                {control gtlRoundComponent $pr, true}
+            {/foreach}
         {else}
         <p><i>Žádná proběhlá výzva</i></p>
         {/if}

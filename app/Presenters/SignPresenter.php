@@ -34,6 +34,12 @@ final class SignPresenter extends BasePresenter
     public function actionUp() {
         $this->setupGoogleAuth();
     }
+
+    public function actionAture() {
+        if (!$this->getUser()->isLoggedIn()) {
+            $this->redirect('Sign:in');
+        }
+    }
     
     public function actionGoogleIn() {
         if (!isset($_GET['code'])) {
@@ -201,4 +207,59 @@ final class SignPresenter extends BasePresenter
             return;
         }
     }
+
+    public function createComponentUserEditForm() {
+        $form = new Form();
+
+        $form->addText('fullname', $this->translator->translate('main.signup.fullname'))
+                ->setHtmlAttribute('placeholder', $this->translator->translate('main.signup.fullname_placeholder'))
+                ->setRequired($this->translator->translate('main.signup.fullname_required'))
+                ->setDefaultValue($this->getUser()->getIdentity()->fullname);
+        $form->addSubmit('submit', $this->translator->translate('main.signature.details_submit'));
+
+        $form->onSuccess[] = [$this,'userEditFormSuccess'];
+
+        return $form;
+    }
+
+    public function userEditFormSuccess(Form $form) {
+        $vals = $form->values;
+
+        $this->users->changeUserProfile($this->getUser()->id, $vals->fullname);
+
+        $this->flashMessage($this->translator->translate('main.signature.success_change'), 'success');
+        $this->redirect('this');
+    }
+
+    public function createComponentChangePasswordForm() {
+        $form = new Form();
+
+        $form->addPassword('old_password', $this->translator->translate('main.signature.old_password'))
+            ->setRequired($this->translator->translate('main.signature.old_pass_mandatory'));
+        $form->addPassword('password', $this->translator->translate('main.signature.new_password'))
+            ->setHtmlAttribute('placeholder', $this->translator->translate('main.signup.password_placeholder'))
+            ->addRule(Form::MIN_LENGTH, $this->translator->translate('main.signup.password_min_length'), 8);
+        $form->addPassword('password_again', $this->translator->translate('main.signature.new_password_again'))
+            ->setHtmlAttribute('placeholder', $this->translator->translate('main.signup.password_again_placeholder'))
+            ->addRule(Form::EQUAL, $this->translator->translate('main.signup.passwords_must_match'), $form['password']);
+
+        $form->addSubmit('submit', $this->translator->translate('main.signature.password_submit'));
+
+        $form->onSuccess[] = [$this,'changePasswordFormSuccess'];
+
+        return $form;
+    }
+
+    public function changePasswordFormSuccess(Form $form) {
+        $vals = $form->values;
+
+        if ($this->users->changeUserPassword($this->getUser()->id, $vals->old_password, $vals->password)) {
+            $this->flashMessage($this->translator->translate('main.signature.pass_changed_ok'), 'success');
+            $this->redirect('this');
+        }
+
+        $this->flashMessage($this->translator->translate('main.signature.pass_changed_fail'), 'error');
+        $this->redirect('this');
+    }
+
 }

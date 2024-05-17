@@ -16,6 +16,11 @@
     <div class="col-12 col-md-6 col-lg-4 mb-3">
         <a class="banner grabthelab" n:href="GrabTheLab:">
             <div class="overlay"></div>
+            {if $gtlActiveRound}
+                <div class="wrapper-note">
+                    {_main.grabthelab.round_is_active}
+                </div>
+            {/if}
             <div class="wrapper">
                 <div class="title">{_main.home.grabthelab_title}</div>
                 <div class="subtitle">{_main.home.grabthelab_subtitle}</div>

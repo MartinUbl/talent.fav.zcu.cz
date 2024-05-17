@@ -9,7 +9,7 @@ class GtlRoundComponent extends \Nette\Application\UI\Control {
     public function __construct(private \App\Model\GrabTheLabModel $grabthelab, private $userId) {
     }
 
-    public function render($roundRecord) {
+    public function render($roundRecord, $isAdmin = false) {
 
         if ($this->userId) {
             $hasDraft = $this->grabthelab->getProjectDraft($this->userId) ? true : false;
@@ -23,6 +23,7 @@ class GtlRoundComponent extends \Nette\Application\UI\Control {
         $this->template->round = $roundRecord;
         $this->template->hasDraft = $hasDraft;
         $this->template->hasProposed = $hasProposed;
+        $this->template->isAdmin = $isAdmin;
 	    $this->template->render(__DIR__ . '/GtlRoundComponent.latte');
     }
 

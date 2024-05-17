@@ -16,6 +16,10 @@ class GrabTheLabModel extends BaseModel {
         return $this->table("grabthelab_rounds");
     }
 
+    public function getRoundById($id) {
+        return $this->getRounds()->where('id', $id)->fetch();
+    }
+
     public function getActiveRound() {
 
         $now = new \DateTime();
@@ -97,5 +101,26 @@ class GrabTheLabModel extends BaseModel {
             'grabthelab_rounds_id' => $rounds_id,
             'proposed_at' => new \DateTime()
         ]);
+    }
+
+    public function getRoundProposedProjects($rounds_id) {
+        $projects = $this->table('grabthelab_proposals')->where('grabthelab_rounds_id', $rounds_id);
+
+        $result = [];
+
+        foreach ($projects as $prj) {
+            $proj = $this->getProjectById($prj->grabthelab_project_id);
+
+            $projRecord = new \stdClass();
+
+            $projRecord->id = $proj->id;
+            $projRecord->users_id = $proj->users_id;
+            $projRecord->state = $proj->state;
+            $projRecord->data = json_decode($proj->data);
+
+            $result[] = $projRecord;
+        }
+
+        return $result;
     }
 };

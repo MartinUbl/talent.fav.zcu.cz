@@ -1,0 +1,63 @@
+{block content}
+
+<div class="row">    
+    <div class="col-12">
+        <h2>{_main.signature.title}</h2>
+
+        <p>{_main.signature.par1}</p>
+
+        <h4>{_main.signature.form_title_profiledetails}</h4>
+
+        {form userEditForm}
+        {if !empty($form->getErrors())}
+            <div class="alert alert-danger">
+                {foreach $form->getErrors() as $err}
+                    <p class="mb-0"><i class="fa-solid fa-circle-exclamation"></i>&nbsp; {$err}</p>
+                {/foreach}
+            </div>
+        {/if}
+            <div class="mb-3 form-parent">
+                {label fullname class=>'form-label' /}
+                {input fullname class=>'form-control'}
+            </div>
+            <div class="mb-3 d-grid">
+                {input submit class=>'btn btn-warning'}
+            </div>
+        {/form}
+
+        <h4>{_main.signature.form_title_password}</h4>
+
+        {if isset($user->getIdentity()->google_id) && !empty($user->getIdentity()->google_id)}
+
+        <p>{_main.signature.pass_google_not_set}</p>
+
+        {else}
+
+        {form changePasswordForm}
+        {if !empty($form->getErrors())}
+            <div class="alert alert-danger">
+                {foreach $form->getErrors() as $err}
+                    <p class="mb-0"><i class="fa-solid fa-circle-exclamation"></i>&nbsp; {$err}</p>
+                {/foreach}
+            </div>
+        {/if}
+            <div class="mb-3 form-parent">
+                {label old_password class=>'form-label' /}
+                {input old_password class=>'form-control'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label password class=>'form-label' /}
+                {input password class=>'form-control'}
+            </div>
+            <div class="mb-3 form-parent">
+                {label password_again class=>'form-label' /}
+                {input password_again class=>'form-control'}
+            </div>
+            <div class="mb-3 d-grid">
+                {input submit class=>'btn btn-warning'}
+            </div>
+        {/form}
+
+        {/if}
+    </div>
+</div>

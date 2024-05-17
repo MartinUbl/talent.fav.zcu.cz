@@ -29,7 +29,49 @@ class AdminPresenter extends BasePresenter
     public function actionGtlRound() {
         $this->template->activeRound = $this->grabthelab->getActiveRound();
         $this->template->upcomingRound = $this->grabthelab->getUpcomingRound();
-        $this->template->pastRounds = $this->grabthelab->getPastRounds();
+        $this->template->pastRounds = $this->grabthelab->getPastRounds()->order('id DESC');
+    }
+
+    public function actionGtlProposals() {
+
+        $activeRound = $this->grabthelab->getActiveRound();
+
+        $this->template->activeRound = $activeRound;
+        $this->template->pastRounds = $this->grabthelab->getPastRounds()->order('id DESC');
+    }
+
+    public function actionGtlProposalsList($id) {
+        $round = $this->grabthelab->getRoundById($id);
+
+        $this->template->round = $round;
+        if ($round) {
+            $this->template->roundProjects = $this->grabthelab->getRoundProposedProjects($round->id);
+        }
+        else {
+            $this->template->roundProjects = [];
+        }
+    }
+
+    public function handleExportProjectPdf($project_id) {
+
+        $proposed = $this->grabthelab->getProjectById($project_id);
+        if (!$proposed) {
+            $this->redirect('this');
+            return;
+        }
+
+        $this->createPdfWithProject($proposed, false);
+    }
+
+    public function handleShowProjectPdf($project_id) {
+
+        $proposed = $this->grabthelab->getProjectById($project_id);
+        if (!$proposed) {
+            $this->redirect('this');
+            return;
+        }
+
+        $this->createPdfWithProject($proposed, true);
     }
 
     public function createComponentGtlRoundComponent() {

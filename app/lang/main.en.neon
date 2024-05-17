@@ -8,6 +8,7 @@ generic:
     not_a_number: "Enter a valid number"
     invalid_price: "Invalid price"
     preparing: "We are working on it!"
+    preparing_section: "We are working on it!"
 
 menu:
     homepage: "Homepage"
@@ -81,6 +82,8 @@ grabthelab:
     active_round: "Current round"
     no_upcoming: "There is no upcoming round."
     no_past_projects: "There are no projects... yet."
+    admin_list: "List of proposals"
+    round_is_active: "Now accepting proposals, submit yours now!"
 
     state_upcoming: "Upcoming"
     state_active: "Active"
@@ -293,3 +296,57 @@ signin:
     invalid_credentials: "Invalid login credentials!"
     unknown_error: "An unknown error has occurred, please, try again later."
     success: "You were successfully signed in!"
+
+events:
+    title: "We support student events"
+    par1: "We have supported several student events in the past. We enjoy working with young people full of ideas and energy, so we have decided to continue to support student events. Below you can see some of the events we have already supported. If you are an organiser of one of these events and we have a way to help you, please get in touch - we'd be happy to arrange further assistance."
+
+    zvazvedu_title: "Zvaž vědu!"
+    zvazvedu_text: "<p class='mt-3'>Zvaž vědu! is an event organized by high school students themselves, which aims to popularize science and arouse enthusiasm in high school students. The main goal is to raise interest in participating in competitions and Olympiads, but the event does not forget to introduce other opportunities in which gifted students can participate.</p><p>In 2023, the first year of this event took place and was a huge success - 300 secondary school students from all corners of the Pilsen Region arrived.</p><p>Our faculty provided the premises for the event with complete technical equipment.</p>"
+    plnoc_title: "PLNOC"
+    plnoc_text: "<p class='mt-3'>With the support of our faculty, an event called PLNOC - Pilsen Lecture Night, where high school students give lectures to high school students, was also held. The rich program was focused mainly on the interests of the students themselves, who lectured to their peers about their areas of interest.</p><p>In addition to financial support, our faculty also provided an accompanying programme in the form of expert lectures and workshops.</p>"
+
+    yourevent_title: "Your event"
+    yourevent_text: "Do you want to organize your own event and need help from us? We will be happy to provide you with whatever we can. Write to us at <a href='mailto:talent@fav.zcu.cz'>talent@fav.zcu.cz</a> and we'll arrange everything needed."
+
+mentoring:
+    title: "Mentoring"
+    par1: "The Faculty of Applied Sciences is full of experts in various fields of science and research. In addition to their extensive knowledge, these experts have indispensable experience that they are willing to provide you with. We have been mentoring high school students for some time."
+    par2: "What can such mentoring look like? It depends on each person. However, the main element is always a professional mentor, which a talent ambassador can help you choose. Do you want to see your mentor regularly in the faculty lab? Do you just need a bit of advice on a project that you are otherwise managing? Do you want to take your project to the next level and lack inspiration? Looking for inspiration for a project whose output has a chance to be useful? We'll figure it all out."
+    par3: "If you'd like to find a mentor, don't be afraid to email the Talent Ambassador (<a href='mailto:talent@fav.zcu.cz'>talent@fav.zcu.cz</a>). Even if you're not sure what you need or want right now - we're also here to help guide you."
+
+    list: "Who did we mentor?"
+
+    lasar_title: "LASAR"
+    lasar_text: "<p class='mt-3'>The LASAR team is composed of five high school students from different parts of our country. At the beginning, they had a very ambitious goal - to build a device that could point a powerful laser beam from the surface of the Earth at a satellite in orbit that was not communicating with the base due to some software bug. This should overload the surge protector, ultimately resulting in a reboot of the satellite's system and the ability to upload updated software that does not contain the bug.</p><p>But they set their sights even further - to fly to Houston and take part in the prestigious Conrad Challenge. They even managed to win two of the three prizes.</p>"
+
+    bohacek_title: "Matyáš Boháček"
+    bohacek_text: "<p class='mt-3'>Matyáš Boháček, a student at the Jan Kepler Gymnasium in Prague, contacted our faculty with a request for mentoring in the field of machine learning. At first it was just mentoring, but over time the cooperation developed and the result was software for Czech sign language recognition.</p><p>His work has attracted the attention of many foreign institutions - he completed a summer internship at the University of California at Berkeley and is now a student at Stanford University. However, he continues to work with our faculty - the development of the app is still ongoing.</p>"
+
+    astrox_title: "AstroX"
+    astrox_text: "<p class='mt-3'>Also, a five-member team of high school students called AstroX will first participate in a hackathon at the Prague Planetarium and then in the AstroPi Mission Space Lab competition. They won the first prize. They then presented the project to the European Space Agency, who liked the project so much that they received all the necessary equipment.</p><p>Their project aims to estimate the height of clouds from images of the Earth taken from space. In 2023, their solution went directly to the International Space Station.</p><p>Our faculty provided the AstroX team with a laboratory where they worked on the project. In fact, this is the first team to ever win the Grab the Lab challenge.</p>"
+
+    ambas_title: "And more..."
+    ambas_text: "Talent Ambassador has already found mentors for dozens of high school students. Will you be among them?"
+
+gallery:
+    title: "Hall of fame"
+    par1: "Here you will find a gallery of all those we have supported in the future."
+    par2: "For now, you can see which <a href='%event_link%'>student projects</a> we have supported and who we have <a href='%mentor_link%'>mentored</a>."
+
+signature:
+    title: "Profile change"
+    par1: "Here you can change your profile data and also your password."
+    form_title_profiledetails: "Personal information"
+    form_title_password: "Change password"
+    details_submit: "Change profile"
+    old_password: "Old password"
+    new_password: "New password"
+    new_password_again: "New password again"
+    password_submit: "Change password"
+    pass_google_not_set: "You have signed in using your Google account - please, change your password in the Google platform."
+    success_change: "Your profile was updated."
+    pass_changed_ok: "The password was changed!"
+    pass_changed_fail: "Your old password does not match!"
+    old_pass_mandatory: "Enter your password!"
+

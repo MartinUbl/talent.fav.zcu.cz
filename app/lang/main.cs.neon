@@ -8,6 +8,7 @@ generic:
     not_a_number: "Zadejte platné číslo"
     invalid_price: "Neplatná cena"
     preparing: "Výzva se připravuje!"
+    preparing_section: "Tato sekce se připravuje!"
 
 menu:
     homepage: "Domů"
@@ -81,6 +82,8 @@ grabthelab:
     active_round: "Aktuálně probíhající výzva"
     no_upcoming: "Momentálně nechystáme žádnou výzvu."
     no_past_projects: "Zatím tu není žádný projekt"
+    admin_list: "Seznam návrhů"
+    round_is_active: "Právě přijímáme návrhy, přihlaš svůj projekt!"
 
     state_upcoming: "Nastávající"
     state_active: "Aktuální"
@@ -299,9 +302,9 @@ events:
     par1: "V minulosti jsme podpořili již několik studentských akcí. Baví nás pracovat s mladými lidmi plnými nápadů a energie, a proto jsme se rozhodli podporovat studentské akce i nadále. Níže si můžete prohlédnout některé akce, které jsme již podpořili. Pokud jste organizátorem nějaké takové akce a máme Vám jak pomoci, ozvěte se nám - rádi se domluvíme na další výpomoci."
 
     zvazvedu_title: "Zvaž vědu!"
-    zvazvedu_text: "<p>Zvaž vědu! je akce organizovaná samotnými středoškoláky, která má za cíl popularizovat vědu a vzbudit nadšení v žácích středních škol. Hlavním cílem je zvednout zájem o účast v soutěžích a olympiádách, akce ale nezapomíná i na představení ostatních příležitostí, kterých se mohou nadaní žáci účastnit.</p><p>V roce 2023 proběhl první ročník této akce a sklidil obrovský úspěch - dorazilo na 300 žáků středních škol ze všech koutů Plzeňského kraje.</p><p>FAVka poskytla prostory pro konání akce s kompletním technickým vybavením.</p>"
+    zvazvedu_text: "<p class='mt-3'>Zvaž vědu! je akce organizovaná samotnými středoškoláky, která má za cíl popularizovat vědu a vzbudit nadšení v žácích středních škol. Hlavním cílem je zvednout zájem o účast v soutěžích a olympiádách, akce ale nezapomíná i na představení ostatních příležitostí, kterých se mohou nadaní žáci účastnit.</p><p>V roce 2023 proběhl první ročník této akce a sklidil obrovský úspěch - dorazilo na 300 žáků středních škol ze všech koutů Plzeňského kraje.</p><p>FAVka poskytla prostory pro konání akce s kompletním technickým vybavením.</p>"
     plnoc_title: "PLNOC"
-    plnoc_text: "<p>S podporou FAVky proběhla i akce zvaná PLNOC - Plzeňská přednášková noc, kde středoškoláci přednáší středoškolákům. Bohatý program byl zaměřen zejména na zájmy samotných studentů, kteří přednášeli svým vrstevníkům o oblasti jejich zájmu.</p><p>FAVka kromě finanční podpory poskytla i doprovodný program ve formě odborných přednášek a workshopů.</p>"
+    plnoc_text: "<p class='mt-3'>S podporou FAVky proběhla i akce zvaná PLNOC - Plzeňská přednášková noc, kde středoškoláci přednáší středoškolákům. Bohatý program byl zaměřen zejména na zájmy samotných studentů, kteří přednášeli svým vrstevníkům o oblasti jejich zájmu.</p><p>FAVka kromě finanční podpory poskytla i doprovodný program ve formě odborných přednášek a workshopů.</p>"
 
     yourevent_title: "Vaše akce"
     yourevent_text: "Chcete zorganizovat vaši vlastní akci a potřebujete od FAVky pomoc? Rádi Vám poskytneme, co bude v našich silách. Napište nám na <a href='mailto:talent@fav.zcu.cz'>talent@fav.zcu.cz</a> a domluvíme vše potřebné."
@@ -315,13 +318,34 @@ mentoring:
     list: "Koho jsme třeba mentorovali?"
 
     lasar_title: "LASAR"
-    lasar_text: ""
+    lasar_text: "<p class='mt-3'>Tým LASAR je složený z pěti středoškolských studentů pocházejících z různých koutů naší země. Na začátku si dali velmi ambiciózní cíl - sestavit takové zařízení, které by z povrchu Země dokázalo namířit silný laserový paprsek na družici pohybující se na orbitě, která nekomunikuje se základnou kvůli nějaké softwarové chybě. Ten by měl přetížit přepěťovou ochranu, což v konečném důsledku vyústí v restart systému družice a možnost nahrát aktualizovaný software, který chybu neobsahuje.</p><p>Dali si ale za cíl posunout jejich záměr ještě dál - odletět do Houstonu a zúčastnit se prestižní soutěže Conrad Challenge. Na té se jim podařilo získat dokonce dvě ze tří cen.</p>"
 
     bohacek_title: "Matyáš Boháček"
-    bohacek_text: ""
+    bohacek_text: "<p class='mt-3'>Student pražského Gymnázia Jana Keplera, Matyáš Boháček, kontaktoval FAVku s prosbou o mentoring v oblasti strojového učení. Zprvu šlo pouze o mentoring, časem se však spolupráce rozvinula a výsledkem byl software pro rozpoznávání českého znakového jazyka.</p><p>Svou prací zaujal nejedno zahraniční pracoviště - absolvoval letní stáž na Kalifornské univerzitě v Berkeley a nyní je studentem na Stanfordově univerzitě. S FAVkou však spolupracuje i nadále - vývoj aplikace stále pokračuje.</p>"
 
     astrox_title: "AstroX"
-    astrox_text: ""
+    astrox_text: "<p class='mt-3'>Taktéž pětičlenný tým středoškoláků s názvem AstroX se nejdříve zúčastnit hackathonu v pražském planetáriu a následně soutěže AstroPi Mission Space Lab. Z té si odnesli první cenu. Následně projekt představili Evropské vesmírné agentuře, které se projekt líbil natolik, že obdrželi všechnu potřebnou techniku.</p><p>Jejich projekt má za cíl ze snímků Země pořízených z vesmíru odhadovat výšku mraků. V roce 2023 jejich řešení putovalo přímo na Mezinárodní vesmírnou stanici.</p><p>FAVka poskytla týmu AstroX laboratoř, ve které na projektu pracovali. V podstatě se jedná o první tým, který kdy vyhrál výzvu Grab the Lab.</p>"
 
     ambas_title: "A další..."
     ambas_text: "Talent ambassador už našel mentora desítkám středoškoláků. Budeš mezi nimi i ty?"
+
+gallery:
+    title: "Galerie úspěchů"
+    par1: "Zde v budoucnu naleznete galerii všech, které jsme podpořili."
+    par2: "Prozatím si můžete prohlédnout, jaké <a href='%event_link%'>studentské projekty</a> jsme podpořili a také koho jsme již <a href='%mentor_link%'>mentorovali</a>."
+
+signature:
+    title: "Změna údajů profilu"
+    par1: "Nacházíte se v sekci, kde můžete změnit údaje na Vašem profilu a také Vaše heslo."
+    form_title_profiledetails: "Osobní údaje"
+    form_title_password: "Změna hesla"
+    details_submit: "Změnit údaje"
+    old_password: "Staré heslo"
+    new_password: "Nové heslo"
+    new_password_again: "Nové heslo znovu"
+    password_submit: "Změnit heslo"
+    pass_google_not_set: "Přihlásil/a jste se prostřednictvím Google účtu - heslo si, prosím, změňte v platformě Google."
+    success_change: "Profil byl úspěšně aktualizován."
+    pass_changed_ok: "Heslo bylo změněno!"
+    pass_changed_fail: "Bylo zadáno špatné staré heslo!"
+    old_pass_mandatory: "Zadejte své heslo!"

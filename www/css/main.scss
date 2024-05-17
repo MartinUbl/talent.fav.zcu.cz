@@ -395,6 +395,20 @@ div.menu {
         transition: top ease-in 0.1s;
     }
 
+    .wrapper-note {
+        display: block;
+        position: absolute;
+
+        bottom: 6px;
+        left: 5%;
+        right: 5%;
+        background-color: #FF0040;
+        padding: 0.2em;
+        text-align: center;
+        color: white;
+        font-size: 0.8em;
+    }
+
     .overlay {
         position: absolute;
         top: 0;

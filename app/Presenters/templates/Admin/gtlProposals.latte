@@ -1,2 +1,23 @@
 {block content}
 
+<div class="row">
+    <div class="col-12">
+
+        <a n:href="Admin:" class="btn btn-sm btn-danger mb-3"><i class="fa-solid fa-angles-left"></i>&nbsp; Zpět do pohledu správce</a>
+
+        <h2>Grab the Lab - Návrhy projektů</h2>
+
+        <p>Níže naleznete výzvy a projekty, které v nich byly vyhlášeny.<p>
+
+        <h3>Probíhající výzva</h3>
+        {if $activeRound}
+            {control gtlRoundComponent $activeRound, true}
+        {/if}
+
+        <h3>Proběhlé výzvy</h3>
+        {foreach $pastRounds as $pr}
+            {control gtlRoundComponent $pr, true}
+        {/foreach}
+
+    </div>
+</div>

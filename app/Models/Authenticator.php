@@ -8,7 +8,7 @@ use Nette,
 /**
  * Users management.
  */
-class Authenticator implements Nette\Security\IAuthenticator
+class Authenticator implements Nette\Security\IAuthenticator, Nette\Security\IdentityHandler
 {
     const
         TABLE_NAME = 'users',
@@ -73,4 +73,23 @@ class Authenticator implements Nette\Security\IAuthenticator
         unset($arr[self::COLUMN_PASSWORD_HASH]);
         return new Nette\Security\Identity($row[self::COLUMN_ID], $row[self::COLUMN_ROLE], $arr);
     }
+
+    public function sleepIdentity(\Nette\Security\IIdentity $identity) : \Nette\Security\IIdentity
+	{
+		return $identity;
+	}
+
+	public function wakeupIdentity(\Nette\Security\IIdentity $identity): ?\Nette\Security\IIdentity
+	{
+		$row = $this->database->table(self::TABLE_NAME)->where(self::COLUMN_ID, $identity->getId())->fetch();
+        if (!$row) {
+            return null;
+        }
+
+        $arr = $row->toArray();
+        $arr['main_role'] = $row[self::COLUMN_ROLE];
+        unset($arr[self::COLUMN_PASSWORD_HASH]);
+
+		return new \Nette\Security\Identity($row[self::COLUMN_ID], $row[self::COLUMN_ROLE], $arr);
+	}
 }

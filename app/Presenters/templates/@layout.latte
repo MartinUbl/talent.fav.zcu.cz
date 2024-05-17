@@ -83,7 +83,7 @@
                     <div class="d-flex">
                         {if $user->isLoggedIn()}
                             <span><div class="right">{$user->getIdentity()->email}</div></span>
-                            <a href="#"><div class="right"><i class="fa-solid fa-gear"></i></div></a>
+                            <a n:href="Sign:ature"><div class="right"><i class="fa-solid fa-gear"></i></div></a>
                             <a n:href="logout!" title="{_main.menu.logout}"><div class="right"><i class="fa-solid fa-right-from-bracket"></i></div></a>
                         {else}
                             <a n:href="Sign:in"><div class="right">{_main.menu.signin}</div></a>

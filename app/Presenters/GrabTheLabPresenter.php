@@ -510,35 +510,6 @@ final class GrabTheLabPresenter extends BasePresenter
             $this->redirect('GrabTheLab:proposalComplete');
     }
 
-    public function createPdfWithProject($project) {
-        $template = $this->createTemplate();
-        $template->setFile(__DIR__ . "/templates/_pdf/proposal.latte");
-        $template->data = json_decode($project->data, true);
-        $template->tr_scopes = \App\Model\Enum\ProjectScope::getTranslatedEnum(function($tr) { return $this->translator->translate($tr); });
-        $template->tr_lengths = \App\Model\Enum\ProjectLength::getTranslatedEnum(function($tr, $d) { return $this->translator->translate($tr, $d); });
-        $template->tr_fincategories = \App\Model\Enum\FinanceCategory::getTranslatedEnum(function($tr) { return $this->translator->translate($tr); });
-        $template->tr_outtypes = \App\Model\Enum\OutputType::getTranslatedEnum(function($tr) { return $this->translator->translate($tr); });
-        $template->cur_date = (new \DateTime())->format('j. n. Y, H:i');
-        $template->cur_author = $this->getUser()->getIdentity()->fullname;
-        $template->res = [
-            'gtl_logo' => file_get_contents(__DIR__ . "/templates/_pdf/_res_gtl_logo.base64"),
-            'fav_logo' => file_get_contents(__DIR__ . "/templates/_pdf/_res_favlogo.svg")
-        ];
-
-        $pdf = new \Contributte\PdfResponse\PdfResponse($template);
-
-        $mpdf = $pdf->getMPDF();
-        $mpdf->AddFontDirectory(__DIR__."/templates/_pdf/");
-        $mpdf->fontdata["Roboto Condensed"]["R"] = "roboto-condensed-regular.ttf";
-        $mpdf->SetFont("Roboto Condensed");
-        $pdf->setMPDF($mpdf);
-
-        $pdf->setSaveMode(\Contributte\PdfResponse\PdfResponse::DOWNLOAD);
-        $pdf->documentTitle = "grabthelab";
-
-        $this->sendResponse($pdf);
-    }
-
     public function handleExportDraftPdf() {
 
         $draft = $this->grabthelab->getProjectDraft($this->getUser()->id);

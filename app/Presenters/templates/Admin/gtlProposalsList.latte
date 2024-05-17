@@ -1,0 +1,38 @@
+{block content}
+
+<div class="row">
+    <div class="col-12">
+
+        <a n:href="Admin:GtlProposals" class="btn btn-sm btn-danger mb-3"><i class="fa-solid fa-angles-left"></i>&nbsp; Zpět na seznam projektů</a>
+
+        <h2>Grab the Lab - Seznam návrhů projektů</h2>
+
+        <p>Seznam návrhů pro danou výzvu.<p>
+
+        <h3>Výzva</h3>
+        {if $round}
+            {control gtlRoundComponent $round, true}
+        {/if}
+        <h3>Seznam projektů</h3>
+        {foreach $roundProjects as $rp}
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <div class="gtl-round pl-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <h5>{$rp->data->project_name}</h5>
+                                <span>Vedoucí týmu: {$rp->data->member_name_0} ({$rp->data->member_school_0}, {$rp->data->member_class_0})</span>
+                            </div>
+                            <div class="col-4 d-flex align-items-center">
+                                <a n:href="showProjectPdf! $rp->id" class="btn btn-primary" style="width: 100%; padding: 0.5em 0.3em; text-align: center;"><i class="fa-solid fa-eye"></i>&nbsp; Ukázat PDF</a>
+                                &nbsp;
+                                <a n:href="exportProjectPdf! $rp->id" class="btn btn-secondary" style="width: 100%; padding: 0.5em 0.3em; text-align: center;"><i class="fa-solid fa-download"></i>&nbsp; Stáhnout PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {/foreach}
+
+    </div>
+</div>
