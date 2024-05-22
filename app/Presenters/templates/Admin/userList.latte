@@ -1,0 +1,59 @@
+{block content}
+
+<div class="row">
+    <div class="col-12">
+
+        <a n:href="Admin:" class="btn btn-sm btn-danger mb-3"><i class="fa-solid fa-angles-left"></i>&nbsp; Zpět do pohledu správce</a>
+
+        <h2>Seznam uživatelů</h2>
+
+        <p class="small">Legenda: <i class="fa-solid fa-crown" title="Administrátor"></i> administrátor, <i class="fa-solid fa-user-tie" title="Manažer"></i> manažer, <i class="fa-regular fa-user" title="Uživatel"></i> uživatel, <i class="fa-solid fa-key" title="Přihlášení heslem"></i> login heslem, <i class="fa-brands fa-google" title="Google přihlášení"></i> Google login</p>
+
+        <table class="table table-light table-striped table-hover table-borderless">
+            <thead>
+                <tr class="table-warning">
+                    <th class="text-center">#</th>
+                    <th style="width: 100%;">Celé jméno</th>
+                    <th>E-mail</th>
+                    <th class="text-center" style="min-width: 5em;">Typ</th>
+                    <th class="text-center" style="min-width: 5em;">Login</th>
+                    {if $isAdministrator}
+                    <th></th>
+                    {/if}
+                </tr>
+            </thead>
+            <tbody>
+                {foreach $users as $usr}
+                <tr>
+                    <td class="text-center">{$usr->id}</td>
+                    <td>{$usr->fullname}</td>
+                    <td>{$usr->email}</td>
+                    <td class="text-center">
+                        {if $usr->role === "admin"}
+                        <i class="fa-solid fa-crown" title="Administrátor"></i>
+                        {elseif $usr->role === "manager"}
+                        <i class="fa-solid fa-user-tie" title="Manažer"></i>
+                        {else}
+                        <i class="fa-regular fa-user" title="Uživatel"></i>
+                        {/if}
+                    </td>
+                    <td class="text-center">
+                        {if !empty($usr->google_id)}
+                        <i class="fa-brands fa-google" title="Google přihlášení"></i>
+                        {else}
+                        <i class="fa-solid fa-key" title="Přihlášení heslem"></i>
+                        {/if}
+                    </td>
+                    {if $isAdministrator}
+                    <td class="text-center">
+                        {if $usr->id !== $user->getId()}
+                        <a n:href="Admin:userDetails id=>$usr->id" class="text-success"><i class="fa-regular fa-pen-to-square"></i></a>
+                        {/if}
+                    </td>
+                    {/if}
+                </tr>
+                {/foreach}
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 services:
     - App\Router\RouterFactory::createRouter
     - App\Model\Authenticator
-    - App\Configurator(googleClientId: %googleauth.client_id%, googleClientSecret: %googleauth.client_secret%)
+    - App\Configurator(googleClientId: %googleauth.client_id%, googleClientSecret: %googleauth.client_secret%, useDebugFeatures: %useDebugFeatures%)
 
     - App\Model\UserModel
     - App\Model\GrabTheLabModel

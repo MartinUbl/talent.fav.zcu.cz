@@ -21,6 +21,10 @@ class UserModel extends BaseModel {
         return $this->getTable()->where('id', $id)->fetch();
     }
 
+    public function getUsers() {
+        return $this->getTable();
+    }
+
     public function getUserByGoogleId($googleId) {
         return $this->getTable()->where('google_id', $googleId)->fetch();
     }
@@ -92,6 +96,12 @@ class UserModel extends BaseModel {
         ]);
 
         return true;
+    }
+
+    public function setUserRole($id, $role) {
+        $this->getTable()->where('id', $id)->update([
+            'role' => $role
+        ]);
     }
 
 };

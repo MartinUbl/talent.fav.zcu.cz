@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+{if !$useDebugFeatures}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFZMTYX45Q"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-FFZMTYX45Q');
+    </script>
+{/if}
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
 
@@ -115,7 +126,7 @@
             <div class="row">
                 <div class="col-12">
                     &copy ZČU 1991 - {date('Y')}
-                    {if $user->isLoggedIn() && $user->isInRole('admin')}
+                    {if $user->isLoggedIn() && ($user->isInRole('admin') || $user->isInRole('manager'))}
                     <a class="admin-footer-link" n:href="Admin:">Administrace</a>
                     {/if}
                 </div>
@@ -134,7 +145,5 @@
 
     <script src="{$baseUrl}/js/main.js"></script>
     {/block}
-
-    <script src="http://localhost:35729/livereload.js?snipver=1"></script>
 </body>
 </html>

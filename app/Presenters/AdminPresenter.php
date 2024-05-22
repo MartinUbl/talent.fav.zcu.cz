@@ -8,8 +8,16 @@ use Nette\Application\UI\Form;
 
 class AdminPresenter extends BasePresenter
 {
-    public function __construct(private \App\Model\GrabTheLabModel $grabthelab) {
-        parent::__construct();
+    public function __construct(private \App\Model\GrabTheLabModel $grabthelab, private \App\Model\UserModel $users, \App\Configurator $configurator) {
+        parent::__construct($configurator);
+    }
+
+    public function isManager() {
+        return $this->getUser()->isLoggedIn() && ($this->getUser()->isInRole("manager") || $this->getUser()->isInRole("admin"));
+    }
+
+    public function isAdministrator() {
+        return $this->getUser()->isLoggedIn() && $this->getUser()->isInRole("admin");
     }
 
     public function startup() {
@@ -20,13 +28,22 @@ class AdminPresenter extends BasePresenter
             $this->redirect("Sign:in");
         }
 
-        if (!$this->getUser()->isInRole("admin")) {
+        if (!$this->isManager()) {
             $this->flashMessage($this->translator->translate("main.generic.insufficient_permissions"), "error");
             $this->redirect("Home:");
         }
+
+        $this->template->isManager = $this->isManager();
+        $this->template->isAdministrator = $this->isAdministrator();
     }
 
     public function actionGtlRound() {
+
+        if (!$this->isAdministrator()) {
+            $this->flashMessage('Na tohle nemáte dostatečná práva!', 'error');
+            $this->redirect('Admin:');
+        }
+
         $this->template->activeRound = $this->grabthelab->getActiveRound();
         $this->template->upcomingRound = $this->grabthelab->getUpcomingRound();
         $this->template->pastRounds = $this->grabthelab->getPastRounds()->order('id DESC');
@@ -50,6 +67,43 @@ class AdminPresenter extends BasePresenter
         else {
             $this->template->roundProjects = [];
         }
+    }
+
+    public function actionUserList() {
+        $this->template->users = $this->users->getUsers();
+    }
+
+    private $detailsUserId = null;
+
+    public function actionUserDetails($id) {
+        if (!$this->isAdministrator()) {
+            $this->redirect("Admin:");
+        }
+
+        if ($this->getUser()->getId() === $id) {
+            $this->redirect("Admin:");
+        }
+
+        $this->detailsUserId = $id;
+        $this->template->loadedUser = $this->users->getUserById($id);
+
+        if (!$this->template->loadedUser) {
+            $this->redirect("Admin:");
+        }
+    }
+
+    public function handleChangeRole($role) {
+        if (!$this->detailsUserId || !$this->isAdministrator() || $this->getUser()->getId() === $this->detailsUserId || $role === 'admin') {
+            $this->terminate();
+        }
+
+        if ($role !== 'user' && $role !== 'manager') {
+            $this->terminate();
+        }
+
+        $this->users->setUserRole($this->detailsUserId, $role);
+
+        $this->redirect('this');
     }
 
     public function handleExportProjectPdf($project_id) {

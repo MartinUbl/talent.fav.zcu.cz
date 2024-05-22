@@ -1,0 +1,61 @@
+{block content}
+
+<div class="row">
+    <div class="col-12 mb-4">
+
+        <a n:href="Admin:userList" class="btn btn-sm btn-danger mb-3"><i class="fa-solid fa-angles-left"></i>&nbsp; Zpět do na seznam</a>
+
+        <h2>Detail uživatele</h2>
+
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <td style="width: 100%">{$loadedUser->id}</td>
+            </tr>
+            <tr>
+                <th>Celé&nbsp;jméno</th>
+                <td>{$loadedUser->fullname}</td>
+            </tr>
+            <tr>
+                <th>E-mail</th>
+                <td>{$loadedUser->email}</td>
+            </tr>
+            <tr>
+                <th>Typ</th>
+                <td>{if $loadedUser->role === "admin"}
+                        <i class="fa-solid fa-crown" title="Administrátor"></i>
+                    {elseif $loadedUser->role === "manager"}
+                        <i class="fa-solid fa-user-tie" title="Manažer"></i>
+                    {else}
+                        <i class="fa-regular fa-user" title="Uživatel"></i>
+                    {/if}
+                </td>
+            </tr>
+            <tr>
+                <th>Login</th>
+                <td>{if !empty($loadedUser->google_id)}
+                        <i class="fa-brands fa-google" title="Google přihlášení"></i>
+                    {else}
+                        <i class="fa-solid fa-key" title="Přihlášení heslem"></i>
+                    {/if}
+                </td>
+            </tr>
+        </table>
+
+        <h4>Změna role</h4>
+
+        {if $loadedUser->role === "admin"}
+
+        <p>Změna role administrátora je možná pouze prostřednictvím editace databáze!</p>
+
+        {else}
+
+        <div class="btn-group">
+            <a n:href="changeRole! role=>'user'" class="btn btn-danger {if $loadedUser->role === "user"}active{/if}"><i class="fa-regular fa-user" title="Uživatel"></i>&nbsp; Uživatel</a>
+            <a n:href="changeRole! role=>'manager'" class="btn btn-danger {if $loadedUser->role === "manager"}active{/if}"><i class="fa-solid fa-user-tie" title="Manažer"></i>&nbsp; Manažer</a>
+            <span class="btn btn-secondary {if $loadedUser->role === "admin"}active{/if}" onclick="alert('Na správce lze povýšit pouze editací databáze!');"><i class="fa-solid fa-crown" title="Administrátor"></i>&nbsp; Správce</span>
+        </div>
+
+        {/if}
+    </div>
+</div>

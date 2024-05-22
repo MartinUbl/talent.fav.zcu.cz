@@ -10,8 +10,8 @@ final class SignPresenter extends BasePresenter
 {
     private $googleClient;
     
-    public function __construct(private \App\Configurator $configurator, private \App\Model\UserModel $users) {
-        parent::__construct();
+    public function __construct(protected \App\Configurator $configurator, private \App\Model\UserModel $users) {
+        parent::__construct($configurator);
     }
     
     private function setupGoogleAuth() {

@@ -1,4 +1,5 @@
 parameters:
+    useDebugFeatures: false
 
 application:
     errorPresenter: Error

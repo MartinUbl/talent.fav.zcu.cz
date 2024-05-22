@@ -6,13 +6,27 @@
 
         <p>Vítejte na nástěnce správce. Zde máte možnost spravovat obsah tohoto portálu. Možnosti jsou pro teď značně omezené kvůli nedostatku času. Brzy ale dokončíme vše potřebné.</p>
 
+        <p>Vaše role:&nbsp;
+        <strong>
+        {if $isAdministrator}
+        <i class="fa-solid fa-crown" title="Administrátor"></i> administrátor
+        {elseif $isManager}
+        <i class="fa-solid fa-user-tie" title="Manažer"></i> manažer
+        {else}
+        uživatel... máte tady vůbec co dělat?
+        {/if}
+        </strong>
+        </p>
+
         <h3>Grab the Lab</h3>
     </div>
 </div>
 <div class="row mb-4">
+    {if $isAdministrator}
     <div class="col-4">
         <a class="admin-sec-btn" n:href="Admin:GtlRound">Grab the Lab<br /><span class="smaller">Vyhlášení výzvy</span></a>
     </div>
+    {/if}
     <div class="col-4">
         <a class="admin-sec-btn" n:href="Admin:GtlProposals">Grab the Lab<br /><span class="smaller">Podané přihlášky</span></a>
     </div>
@@ -40,3 +54,18 @@
     </div>
 </div>
 *}
+<div class="row">
+    <div class="col-12">
+        <h3>Uživatelé</h3>
+    </div>
+</div>
+<div class="row mb-4">
+    <div class="col-4">
+        <a class="admin-sec-btn" n:href="Admin:UserList">Seznam uživatelů</a>
+    </div>
+    {*
+    <div class="col-4">
+        <a class="admin-sec-btn" n:href="Admin:GtlHistory">Grab the Lab<br /><span class="smaller">Správa historie</span></a>
+    </div>
+    *}
+</div>

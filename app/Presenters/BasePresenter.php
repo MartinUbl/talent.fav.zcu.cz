@@ -14,10 +14,15 @@ class BasePresenter extends Nette\Application\UI\Presenter
     /** @var \Contributte\Translation\LocalesResolvers\Session @inject */
 	public $translatorSessionResolver;
 
+    public function __construct(protected \App\Configurator $configurator) {
+        //
+    }
+
     public function startup() {
         parent::startup();
 
         $this->template->lang = $this->translator->getLocale();
+        $this->template->useDebugFeatures = $this->configurator->useDebugFeatures;
     }
 
 	public function handleChangeLocale(string $lang): void

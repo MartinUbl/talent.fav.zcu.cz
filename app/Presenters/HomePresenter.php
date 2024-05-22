@@ -8,8 +8,8 @@ use Nette;
 
 final class HomePresenter extends BasePresenter
 {
-    public function __construct(private \App\Model\GrabTheLabModel $grabthelab) {
-        parent::__construct();
+    public function __construct(private \App\Model\GrabTheLabModel $grabthelab, \App\Configurator $configurator) {
+        parent::__construct($configurator);
     }
 
     public function actionDefault() {
