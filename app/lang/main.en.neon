@@ -1,4 +1,4 @@
-title: "High school students support"
+title: "Enthusiastic students support"
 
 generic:
     not_signed_in: "You have to be logged in to perform this action!"
@@ -26,8 +26,8 @@ menu:
     logout: "Log out"
 
 home:
-    title: "High school student support portal"
-    par1: "Welcome to the Faculty of Applied Sciences portal for supporting the activities of high school students. On this portal, you will find three main activities that are supported by a talent ambassador: Grab the Lab challenge to provide students with a lab, Dean's Scholarship and supportive individual activities to support high school students"
+    title: "Enthusiastic student support portal"
+    par1: "Welcome to the Faculty of Applied Sciences portal for supporting the activities of high school and university students. On this portal, you will find three main activities that are supported by a talent ambassador: Grab the Lab challenge to provide students with a lab, Dean's Scholarship and supportive individual activities to support high school students"
     par2: "The Faculty of Applied Sciences provides countless other activities for high schools. Their complete list can be found <a href='https://www.fav.zcu.cz/cs/Partnership/primaryschool.html'>on faculty websites</a>. You may be interested in, for example <a href='https://www.fav.zcu.cz/cs/Partnership/thematic_work.html'>Středoškolská Odborná Činnost</a>. The Talent Ambassador will also help you choose and find a suitable mentor."
 
     grabthelab_title: "Grab the Lab"

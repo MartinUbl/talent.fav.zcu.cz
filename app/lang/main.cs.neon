@@ -1,4 +1,4 @@
-title: "Podpora středoškolských studentů"
+title: "Podpora aktivních studentů"
 
 generic:
     not_signed_in: "Pro tuto akci je nutné se přihlásit!"
@@ -26,8 +26,8 @@ menu:
     logout: "Odhlásit se"
 
 home:
-    title: "Portál podpory středoškolských studentů"
-    par1: "Vítejte na portálu Fakulty aplikovaných věd pro podporu středoškolských studentů. Na tomto portálu najdete tři hlavní aktivity, které zaštiťuje člověk s funkcí talent ambassador: výzvu Grab the Lab pro poskytnutí laboratoře, Stipendium děkana a podpůrné individuální aktivity pro podporu středoškolských studentů"
+    title: "Portál podpory aktivních studentů"
+    par1: "Vítejte na portálu Fakulty aplikovaných věd pro podporu aktivních studentů (středoškolských i vysokoškolských). Na tomto portálu najdete tři hlavní aktivity, které zaštiťuje člověk s funkcí talent ambassador: výzvu Grab the Lab pro poskytnutí laboratoře, Stipendium děkana a podpůrné individuální aktivity pro podporu středoškolských studentů"
     par2: "Fakulta aplikovaných věd poskytuje nespočet dalších aktivit pro střední školy. Jejich kompletní seznam naleznete <a href='https://www.fav.zcu.cz/cs/Partnership/primaryschool.html'>na stránkách FAV</a>. Pravděpodobně Vás může zajímat například <a href='https://www.fav.zcu.cz/cs/Partnership/thematic_work.html'>Středoškolská Odborná Činnost</a>. S jejím výběrem a nalezením vhodného mentora Vám taktéž pomůže talent ambassador."
 
     grabthelab_title: "Grab the Lab"

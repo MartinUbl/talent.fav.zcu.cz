@@ -169,4 +169,39 @@ class AdminPresenter extends BasePresenter
 
         $this->redirect('this');
     }
+
+    public function createComponentRoundActiveEdit() {
+        $activeRound = $this->grabthelab->getActiveRound();
+
+        $form = new Form();
+
+        $form->addDateTime('start', 'Návrhy zasílat od', false)
+            ->setDefaultValue($activeRound ? $activeRound->proposal_start : null)
+            ->setRequired('Toto pole je vyžadováno');
+        $form->addDateTime('end', 'Návrhy zasílat do', false)
+            ->setDefaultValue($activeRound ? $activeRound->proposal_end : null)
+            ->setRequired('Toto pole je vyžadováno');
+        $form->addInteger('max', 'Maximální počet návrhů')
+            ->setDefaultValue($activeRound ? $activeRound->max_proposals : null)
+            ->addRule(Form::MIN, 'Zadejte číslo od 0', 0)
+            ->addRule(Form::INTEGER, 'Zadejte celé číslo');
+
+        $form->addSubmit('submit', 'Nastavit');
+
+        $form->onSuccess[] = [$this, 'roundActiveEditFormSuccess'];
+
+        return $form;
+    }
+
+    public function roundActiveEditFormSuccess(Form $form) {
+        $vals = $form->values;
+
+        $activeRound = $this->grabthelab->getActiveRound();
+
+        if ($activeRound) {
+            $this->grabthelab->updateRound($activeRound->id, $vals->start, $vals->end, $vals->max);
+        }
+
+        $this->redirect('this');
+    }
 }

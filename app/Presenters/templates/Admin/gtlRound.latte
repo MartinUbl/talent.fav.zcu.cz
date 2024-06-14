@@ -38,6 +38,25 @@
         <h3>Aktuálně probíhající výzva</h3>
 
         {if $activeRound}
+
+            {form roundActiveEdit}
+                <div class="mb-3 form-parent">
+                    {label start class=>'form-label' /}
+                    {input start class=>'form-control'}
+                </div>
+                <div class="mb-3 form-parent">
+                    {label end class=>'form-label' /}
+                    {input end class=>'form-control'}
+                </div>
+                <div class="mb-3 form-parent">
+                    {label max class=>'form-label' /}
+                    {input max class=>'form-control'}
+                </div>
+                <div class="mb-3 d-grid">
+                    {input submit class=>'btn btn-warning'}
+                </div>
+            {/form}
+
             {control gtlRoundComponent $activeRound, true}
         {else}
         <p><i>Žádná nastávající výzva</i></p>
