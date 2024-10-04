@@ -20,6 +20,8 @@
 
         <h3>{_main.grabthelab.active_round}</h3>
 
+        <p>{_main.grabthelab.poster_link_pre} <a class="text-danger" href="{$baseUrl}/files/gtl-01-2024.pdf" title="Grab the Lab call for projects">{_main.grabthelab.poster_link}</a></p>
+
         {control gtlRoundComponent $activeRound}
 
         {else}
@@ -32,7 +34,9 @@
 
         <h3>{_main.grabthelab.past}</h3>
 
-        <p><i>{_main.grabthelab.no_past_projects}</i></p>
+        <p><i>{_main.grabthelab.inspired_by}</i></p>
+
+        {*<p><i>{_main.grabthelab.no_past_projects}</i></p>*}
 
         <div class="row">
             <div class="col-12 mb-3 d-grid">

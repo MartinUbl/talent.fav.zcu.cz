@@ -78,10 +78,13 @@ grabthelab:
     no_current_call: "Momentálně žádný projekt neprobíhá, ani není otevřena žádná výzva."
     past: "V minulosti jsme podpořili"
 
+    poster_link_pre: "Stahněte si"
+    poster_link: "plakát k aktuální výzvě"
     upcoming_round: "Chystáme výzvu"
     active_round: "Aktuálně probíhající výzva"
     no_upcoming: "Momentálně nechystáme žádnou výzvu."
     no_past_projects: "Zatím tu není žádný projekt"
+    inspired_by: "K vytvoření výzvy jsme byli inspirováni například projektem AstroX. Stejně tak, jako jsme dříve podpořili je, můžeme nyní podpořit právě vás."
     admin_list: "Seznam návrhů"
     round_is_active: "Právě přijímáme návrhy, přihlaš svůj projekt!"
 

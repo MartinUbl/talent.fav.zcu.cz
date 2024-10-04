@@ -78,10 +78,13 @@ grabthelab:
     no_current_call: "There is currently no ongoing project, nor any competition announced."
     past: "We have already supported"
 
+    poster_link_pre: "You can download"
+    poster_link: "a poster for upcoming round"
     upcoming_round: "Upcoming round"
     active_round: "Current round"
     no_upcoming: "There is no upcoming round."
     no_past_projects: "There are no projects... yet."
+    inspired_by: "To create the Grab the Lab challenge, we were greatly inspired by the AstroX project. Just as we previously supported them, we can support you now."
     admin_list: "List of proposals"
     round_is_active: "Now accepting proposals, submit yours now!"
 
