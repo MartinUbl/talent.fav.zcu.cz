@@ -28,7 +28,8 @@ menu:
 home:
     title: "Portál podpory aktivních studentů"
     par1: "Vítejte na portálu Fakulty aplikovaných věd pro podporu aktivních studentů (středoškolských i vysokoškolských). Na tomto portálu najdete tři hlavní aktivity, které zaštiťuje člověk s funkcí talent ambassador: výzvu Grab the Lab pro poskytnutí laboratoře, Stipendium děkana a podpůrné individuální aktivity pro podporu středoškolských studentů"
-    par2: "Fakulta aplikovaných věd poskytuje nespočet dalších aktivit pro střední školy. Jejich kompletní seznam naleznete <a href='https://www.fav.zcu.cz/cs/Partnership/primaryschool.html'>na stránkách FAV</a>. Pravděpodobně Vás může zajímat například <a href='https://www.fav.zcu.cz/cs/Partnership/thematic_work.html'>Středoškolská Odborná Činnost</a>. S jejím výběrem a nalezením vhodného mentora Vám taktéž pomůže talent ambassador."
+    par2: "Fakulta aplikovaných věd poskytuje nespočet dalších aktivit pro střední školy. Jejich kompletní seznam naleznete <a href='https://www.fav.zcu.cz/cs/Partnership/primaryschools/index.html'>na stránkách FAV</a>. Pravděpodobně Vás může zajímat například <a href='https://www.fav.zcu.cz/cs/Partnership/primaryschools/thematic_work.html'>Středoškolská Odborná Činnost</a>. S jejím výběrem a nalezením vhodného mentora Vám taktéž pomůže talent ambassador."
+    par3: "V případě jakýchkoliv dotazů se nebojte ozvat našemu talent ambassadorovi na e-mailové adrese <a href='mailto:talent@fav.zcu.cz' title='Talent ambassador mail'>talent@fav.zcu.cz</a>"
 
     grabthelab_title: "Grab the Lab"
     grabthelab_subtitle: "Sháníš laboratoř pro svůj tým? Máme ji pro vás!"
@@ -84,7 +85,7 @@ grabthelab:
     active_round: "Aktuálně probíhající výzva"
     no_upcoming: "Momentálně nechystáme žádnou výzvu."
     no_past_projects: "Zatím tu není žádný projekt"
-    inspired_by: "K vytvoření výzvy jsme byli inspirováni například projektem AstroX. Stejně tak, jako jsme dříve podpořili je, můžeme nyní podpořit právě vás."
+    inspired_by: "K vytvoření výzvy jsme byli inspirováni například projektem AstroX. Stejně tak, jako jsme dříve podpořili studenty plzeňského Masarykova gymnázia, můžeme nyní podpořit právě vás."
     admin_list: "Seznam návrhů"
     round_is_active: "Právě přijímáme návrhy, přihlaš svůj projekt!"
 
