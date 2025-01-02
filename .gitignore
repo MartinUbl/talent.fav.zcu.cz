@@ -2,3 +2,4 @@ config/local.neon
 composer.lock
 nbproject
 nbproject/*
+phinx.yml
