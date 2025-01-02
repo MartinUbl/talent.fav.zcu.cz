@@ -1,0 +1,13 @@
+paths:
+    migrations: "%%PHINX_CONFIG_DIR%%/migrations"
+
+environments:
+    default_migration_table: phinxlog
+    default_database: deployment
+
+    deployment:
+        adapter: mysql
+        host: localhost
+        user: root
+        password:
+        name: talent

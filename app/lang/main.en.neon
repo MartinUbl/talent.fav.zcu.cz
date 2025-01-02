@@ -78,6 +78,8 @@ grabthelab:
     current: "Ongoing project"
     no_current_call: "There is currently no ongoing project, nor any competition announced."
     past: "We have already supported"
+    team_title: "Team"
+    support_until: "Support until"
 
     poster_link_pre: "You can download"
     poster_link: "a poster for upcoming round"
