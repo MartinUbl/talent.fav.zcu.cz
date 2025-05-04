@@ -12,6 +12,8 @@
         <h3>Probíhající výzva</h3>
         {if $activeRound}
             {control gtlRoundComponent $activeRound, true}
+        {else}
+            <p><i>Žádná výzva není aktuálně vyhlášena.</i></p>
         {/if}
 
         <h3>Proběhlé výzvy</h3>
