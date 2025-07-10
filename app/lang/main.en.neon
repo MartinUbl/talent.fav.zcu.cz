@@ -339,6 +339,9 @@ gallery:
     title: "Hall of fame"
     par1: "Here you will find a gallery of all those we have supported in the future."
     par2: "For now, you can see which <a href='%event_link%'>student projects</a> we have supported and who we have <a href='%mentor_link%'>mentored</a>."
+    moreprojects: "And more..."
+    optiforge_title: "OptiForge - affordable VR/AR glasses"
+    optiforge_text: "A team of high school students designed and built a prototype of virtual and augmented reality goggles that are affordable yet provide a wide range of uses. The goggles are designed to be accessible to everyone, so anyone can print them on a 3D printer and assemble them themselves from inexpensive electronic parts. The team participated in the Grab the Lab competition from November 2024 to May 2025 and continue to work with the faculty."
 
 signature:
     title: "Profile change"

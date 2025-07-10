@@ -338,7 +338,10 @@ mentoring:
 gallery:
     title: "Galerie úspěchů"
     par1: "Zde v budoucnu naleznete galerii všech, které jsme podpořili."
-    par2: "Prozatím si můžete prohlédnout, jaké <a href='%event_link%'>studentské projekty</a> jsme podpořili a také koho jsme již <a href='%mentor_link%'>mentorovali</a>."
+    par2: "Také si můžete prohlédnout, jaké <a href='%event_link%'>studentské projekty</a> jsme podpořili a také koho jsme již <a href='%mentor_link%'>mentorovali</a>."
+    moreprojects: "A další..."
+    optiforge_title: "OptiForge - cenově dostupné brýle pro VR a AR"
+    optiforge_text: "Tým středoškoláků z Mikulášského gymnázia navrhnul a sestrojil prototyp brýlí pro virtuální a rozšířenou realitu, které jsou cenově dostupné a přitom poskytují široké možnosti využití. Brýle jsou navrženy tak, aby byly dostupné všem, a tedy si je kdokoliv mohl vytisknout na 3D tiskárně a z levných elektronických dílů si je sám sestavit. Tým se účastnil soutěže Grab the Lab od listopadu 2024 do května 2025 a s FAVkou spolupracují i nadále."
 
 signature:
     title: "Změna údajů profilu"

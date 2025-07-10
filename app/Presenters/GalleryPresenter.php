@@ -8,4 +8,7 @@ use Nette;
 
 final class GalleryPresenter extends BasePresenter
 {
+    public function createComponentDisplayBlockComponent() {
+        return new \App\Components\DisplayBlockComponent($this->translator);
+    }
 }
