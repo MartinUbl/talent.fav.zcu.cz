@@ -9,6 +9,12 @@
     <div class="col-12 content-block">
         <h2>{_main.signup.title}</h2>
 
+        {if isset($alt) && !empty($alt) && $alt === 'gtl'}
+            <div class="alert alert-warning">
+                {_main.grabthelab.sign_up_text_gtl}
+            </div>
+        {/if}
+
         {form signUpForm}
         {if !empty($form->getErrors())}
             <div class="alert alert-danger">

@@ -20,6 +20,7 @@ class GtlRoundComponent extends \Nette\Application\UI\Control {
             $hasProposed = false;
         }
 
+        $this->template->hasValidUserId = $this->userId ? true : false;
         $this->template->round = $roundRecord;
         $this->template->hasDraft = $hasDraft;
         $this->template->hasProposed = $hasProposed;

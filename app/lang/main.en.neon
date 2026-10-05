@@ -104,6 +104,9 @@ grabthelab:
     edit_draft: "Edit draft"
     proposed_already: "Proposed"
 
+    sign_in_to_apply: "Sign in to apply"
+    sign_up_text_gtl: "To register for the Grab the Lab call, you must be registered on the site. If you are already registered, please sign in."
+
     conditions_link: "Current competition conditions"
     conditions_title: "Terms and conditions"
 

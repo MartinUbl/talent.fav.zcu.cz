@@ -42,7 +42,11 @@
                             {elseif $hasProposed}
                                 <a href="{plink GrabTheLab:proposalSent}" class="btn btn-warning" disabled style="width: 100%; padding: 0.5em 0.3em; text-align: center;">{_main.grabthelab.proposed_already}</a>
                             {else}
-                                <a href="{plink GrabTheLab:proposalCreate}" class="btn btn-warning" style="width: 100%; padding: 0.5em 0.3em; text-align: center;">{_main.grabthelab.apply_now}</a>
+                                {if $hasValidUserId}
+                                    <a href="{plink GrabTheLab:proposalCreate}" class="btn btn-warning" style="width: 100%; padding: 0.5em 0.3em; text-align: center;">{_main.grabthelab.apply_now}</a>
+                                {else}
+                                    <a href="{plink Sign:up alt=>gtl}" class="btn btn-warning" style="width: 100%; padding: 0.5em 0.3em; text-align: center;">{_main.grabthelab.sign_in_to_apply}</a>
+                                {/if}
                             {/if}
                         {else}
                         {/if}

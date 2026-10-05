@@ -100,9 +100,12 @@ grabthelab:
     apply_to: "do"
     max_proposals: "Maximální počet přihlášek"
     unlimited: "neomezeno"
-    apply_now: "Přihlásit se"
+    apply_now: "Podat přihlášku"
     edit_draft: "Upravit návrh"
     proposed_already: "Zažádáno"
+
+    sign_in_to_apply: "Registrujte se pro podání přihlášky"
+    sign_up_text_gtl: "Pro registraci do výzvy Grab the Lab je nutné být zaregistrován na stránkách. Pokud už jste zaregistrováni, přihlaste se."
 
     conditions_link: "Aktuální podmínky soutěže"
     conditions_title: "Podmínky soutěže"

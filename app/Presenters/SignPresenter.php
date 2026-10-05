@@ -31,7 +31,8 @@ final class SignPresenter extends BasePresenter
         $this->setupGoogleAuth();
     }
     
-    public function actionUp() {
+    public function actionUp($alt = null) {
+        $this->template->alt = $alt;
         $this->setupGoogleAuth();
     }
 

@@ -86,7 +86,7 @@ final class GrabTheLabPresenter extends BasePresenter
     }
 
     public function createComponentGtlRoundComponent() {
-        return new \App\Components\GtlRoundComponent($this->grabthelab, $this->getUser()->id);
+        return new \App\Components\GtlRoundComponent($this->grabthelab, $this->getUser()->isLoggedIn() ? $this->getUser()->id : null);
     }
 
     public function createComponentGtlProjectDisplayComponent() {
