@@ -90,7 +90,7 @@ final class GrabTheLabPresenter extends BasePresenter
     }
 
     public function createComponentGtlProjectDisplayComponent() {
-        return new \App\Components\GtlProjectDisplayComponent($this->grabthelab, $this->getUser()->id);
+        return new \App\Components\GtlProjectDisplayComponent($this->grabthelab, $this->getUser()->isLoggedIn() ? $this->getUser()->id : null);
     }
 
     public function createComponentGtlProposalNav() {
